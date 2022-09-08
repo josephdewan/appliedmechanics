@@ -9,63 +9,47 @@
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
     <title>Joseph Dewan</title>
-    <link rel="stylesheet" href="theme.css" type="text/css" />
+    <link rel="stylesheet" href="External/theme.css"/>
     <style>
-      model-viewer {
-        width: 600px;
-        height: 600px;
-        margin: 10, auto;
-      }
-      .imgbox {
-        display: grid;
-        height: 100%;
-      }
-      .center-fit {
-        max-width: 100%;
-        max-height: 100vh;
-        margin: auto;
-      }
-      .center-text {
-        text-align: center;
-      }
-      .font {
-        font-family: Georgia, "Times New Roman", Times, serif;
-      }
 
-      .vl {
-        border-left: 6px solid green;
-        height: 15px;
-      }
+      
     </style>
   </head>
   <body class="font">
     <header class="center-text">
       <h1>Joseph's Website</h1>
       <hr />
-      <div>
-        <p>LinkedIn</p>
-        <div class="vl">
-          <p>Research: LiDAR Photogrammetry Soccer Ball Indentation</p>
-        </div>
+      <div class="center-text">
+        <a href="https://www.linkedin.com/in/joseph-dewan-36b56a211/">
+          <img src="/Obj/LinkedIn_Logo.png" alt="Joseph Dewan's LinkedIn" height="50pt">
+        </a>
+        <p class="leftMargin">
+          <nav>
+            <p>
+            Research: &nbsp; 
+            <a href="/External/LiDAR.html"  target="_blank">LiDAR &nbsp; </a>
+            |&nbsp;
+            <a href="/External/Photogrammetry.html" target="_blank">Photogrammetry &nbsp;</a>
+            |&nbsp;
+            <a href="/External/SoccerBallIndentation.html" target="_blank">Soccer Ball Indentation &nbsp</a>
+            |&nbsp;
+          </p>
+          </nav>
+        </p>
       </div>
     </header>
-
     <main>
-      <div class="imgbox">
-        <model-viewer
-          class="center-fit"
-          src="/Obj/TestHead2Reality_LOD0.glb"
-          alt="3D model of the helmet"
-          camera-controls
-          auto-rotate
-        ></model-viewer>
-      </div>
-
-      <div class="center-text">
-        <p>Model above can be controlled by the mouse</p>
+      <div>
+        <h2>
+          Joseph Dewan
+        </h2>
+          <div class="container">
+          <img class="container" src="/Obj/testheadshot.jfif" alt="Joseph Dewan's headshot">
+          <p>
+            Jospeh Dewan is an undergraduate researcher studying mechanical engineering at Brown University
+          </p>
+        </div>
       </div>
     </main>
   </body>
-
-  <style></style>
 </html>
