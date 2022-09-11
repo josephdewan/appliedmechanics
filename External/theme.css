@@ -1,67 +1,92 @@
 model-viewer {
-    width: 600px;
-    height: 600px;
-    margin: 10, auto;
-    border: 1pt solid black;
-  }
-  .imgbox {
-    display: grid;
-    height: 100%;
-  }
-  .center-fit {
-    max-width: 100%;
-    max-height: 100vh;
-    margin: auto;
-  }
-  .center-text {
-    text-align: center;
-  }
-  .font {
-    font-family: Georgia, "Times New Roman", Times, serif;
-  }
+  width: 600px;
+  height: 600px;
+  margin: 10, auto;
+  border: 1pt solid black;
+}
+.imgbox {
+  display: grid;
+  height: 100%;
+}
+.center-fit {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: auto;
+}
+.center-text {
+  text-align: center;
+}
+.font {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
 
-  .vl {
-    border-left: 3px solid black;
-    height: 20px;
-    margin-right: 10pt;
-  }
-  .leftMargin {
-    margin-left: 5pt;
-  }
-  nav {
-grid-template-columns: repeat(4, minmax(0, 1fr));
-/* 
+.vl {
+  border-left: 3px solid black;
+  height: 20px;
+  margin-right: 10pt;
+}
+.leftMargin {
+  margin-left: 5pt;
+}
+
+nav {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* 
 if we did this instead of the template it would be a problem:
 grid-auto-flow: column;
 */
-font: 120% system-ui;
-text-align: center;
-}
-a {
-text-decoration: none;
-color: black;
-}
-a:hover {
-font-weight: 900;
-color: red;
+  font: 120% system-ui;
+  text-align: center;
 }
 
 html {
-    margin-left: 5%;
-    margin-right: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 body {
-    margin: 0pt;
+  margin: 0pt;
 }
 
 .container {
-    width: 100%;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .container img {
-    width: 50px;
-    margin-right: 10pt;
+  width: 200px;
+  margin-right: 10pt;
+}
+
+.JDheader {
+  margin-bottom: -5pt;
+}
+
+a.link1 {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, red, red 50%, black 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  font-weight: bold;
+}
+
+a.link1:hover {
+  background-position: 0 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.caption {
+  text-align: center;
+  color: grey;
+  margin-top: 3pt;
 }
