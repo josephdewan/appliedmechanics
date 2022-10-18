@@ -190,8 +190,16 @@
           5. Changing Methodology
         </h2>
         <p>
-          Taking it one step further to resolve problems 2 and 3, a stage was created. This stage is composed of black material that is absorbent to any light source. This black flock material absorbs 99% of light at certain angles, making it impossible for a camera to pick up. Darker material might help seperate the object from the background, however, it also makes dust particles more visible which can make the photogrammetry software crash. It is important to keep any particles away from the black material. The proposed plan was to take pictures of the object on a black stand and background so that the software is only able to replicate the lit areas. All the lights in the room were turned off and this eliminated any additional light reflection from surfaces around the test piece. This gave the software the illusion that the object was floating in space. The model could be recreated on all sides and this helped the accuracy improve drastically. Cross polarization was also used. Cross polarization is a method in which linear polarized light is filtered by a circular polarizer. The surface highlights and shadows were completely removed. Cross-polarizing the light yielded the best and most accurate images that I could have acquired. Since the light removed any shadows, I could pause the photo imaging process and flip the object, then resume the same process as before.
-        </p>
+          Taking it one step further to resolve problems 2 and 3, a stage was created. This stage is composed of black material that is absorbent to any light source. This black flock material absorbs 99% of light at certain angles, making it impossible for a camera to pick up. Darker material might help seperate the object from the background, however, it also makes dust particles more visible which can make the photogrammetry software crash. It is important to keep any particles away from the black material. The proposed plan was to take pictures of the object on a black stand and background so that the software is only able to replicate the lit areas. All the lights in the room were turned off and this eliminated any additional light reflection from surfaces around the test piece. This gave the software the illusion that the object was floating in space. The model could be recreated on all sides and this helped the accuracy improve drastically. 
+          <br>
+            <p>polarization was also used. Cross polarization is a method in which linear polarized light is filtered by a circular polarizer. To create this, I made a frame with a square hole in order to fit a DSLR or iPhone camera in the middle. The design consisted of a linear polarizer in front of led strips that were soldered together in a loop. The arms of the frame are attached to tosional hinges in order to hold the arms stationary at a desired angle. The design goal was to create something with high flexability to accomodate any surfaces that might need to get scanned in the future. Using this light source alongside a circular polarizer on the camera lense, the surface highlights and shadows were completely removed. Cross-polarizing the light yielded the best and most accurate images that I could have acquired. Since the light removed any shadows, I could pause the photo imaging process and flip the object, then resume the same process as before.
+            </p>
+           </p>
+           <img class="researchimg2" src="../images/PhotogrammetrySetup.png" alt="Cross Polarizing Setup">
+           <figcaption class="caption">
+             Figure 4) Right image displays a custom linear polarzing light emitter with angles adjustable from 0 to 180 degrees. The left image is the square cut-out for a camera to take pictures of the object with an incredibly dark background and stand. 
+             <hr>
+           </figcaption>
       </div>
       <div class="info-text">
         <h2 id="6.">
@@ -206,12 +214,12 @@
         </p>
         <img class="researchimg2" src="../images/CrossPolarization.png" alt="Cross Polarized Images">
         <figcaption class="caption">
-          Figure 4) <b>A</b> displays the type of images I was using before. <b>B</b> are images from polarizing the light, hence any harsh shadows are removed. <b>C</b> is an image captured by cross polarizing the light.
+          Figure 5) <b>A</b> displays the type of images I was using before. <b>B</b> are images from polarizing the light, hence any harsh shadows are removed. <b>C</b> is an image captured by cross polarizing the light.
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryMeshroom2.png" alt="">
         <figcaption class="caption">
-          Figure 5) <b>A</b> are the diameter readings from the images gathered from cross polarization and the errro was 1.71% <b>B</b> represents a measurement taken of a finer detail of the model, between extruded cubes. The error for this was 1.45%.
+          Figure 6) <b>A</b> are the diameter readings from the images gathered from cross polarization and the errro was 1.71% <b>B</b> represents a measurement taken of a finer detail of the model, between extruded cubes. The error for this was 1.45%.
           <hr>
         </figcaption>
         <model-viewer
@@ -227,7 +235,7 @@
           </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryMeshroom3.png" alt="">
         <figcaption class="caption">
-          Figure 6) Models reconstructed in Meshroom with artifacts and noise in the images. Even with the extraneous parts, <b>A</b> had an error of 0.20% for the diameter, and <b>B</b> had an error of 3.42% for the extruded part. Still, the difference is &lt; 0.50mm. This is the most accurate model that has been created.
+          Figure 7) Models reconstructed in Meshroom with artifacts and noise in the images. Even with the extraneous parts, <b>A</b> had an error of 0.20% for the diameter, and <b>B</b> had an error of 3.42% for the extruded part. Still, the difference is &lt; 0.50mm. This is the most accurate model that has been created.
           <hr>
         </figcaption>
         <h3 id="6.2">
@@ -238,17 +246,17 @@
         </p>
         <img class="researchimg2" src="../images/PhotogrammetryReality1.png" alt="">
         <figcaption class="caption">
-          Figure 7) Sensor housing error of 1.57%
+          Figure 8) Sensor housing error of 1.57%
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryReality2.png" alt="">
         <figcaption class="caption">
-          Figure 8) Strap width error of 2.62%
+          Figure 9) Strap width error of 2.62%
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryReality3.png" alt="">
         <figcaption class="caption">
-          Figure 9) Frame segment error of 0.78%
+          Figure 10) Frame segment error of 0.78%
           <hr>
         </figcaption>
         <div class="imgbox">
