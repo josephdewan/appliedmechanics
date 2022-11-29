@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta hyyp-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
-    <title>Photogrammetry - Joseph Dewan</title>
-    <link rel="stylesheet" href="theme.css"/>
-    <style>
-      
-    </style>
-  </head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta hyyp-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+        ></script>
+        <title>New Helmet Design - Joseph Dewan</title>
+        <link rel="stylesheet" href="theme.css"/>
+        <style>   
+        </style>
+    </head>
+
     <header class="center-text">
       <div class="center-text">
         <a href="https://appliedmechanicslab.github.io/Team.html"> 
@@ -36,8 +35,8 @@
             |&nbsp;
             <a class="link1" href="../External/Photogrammetry.html" target="_blank">Photogrammetry &nbsp;</a>
             |&nbsp;
-            <!-- <a class="link1" href="../External/SoccerBallIndentation.html" target="_blank">Soccer Ball Indentation &nbsp</a>
-            |&nbsp; -->
+            <a class="link1" href="../External/NewHelmetDesign.html" target="_blank">New Helmet Design &nbsp</a>
+            |&nbsp; 
           </p>
           </nav>
         </p>
@@ -50,17 +49,16 @@
         </p>
       </div>
     </header>
-  </body>
 
   <body>
     <main>
       <div class="bodymargin2">
       <div class="info-text">
         <h1>
-          Photogrammetry
+          Introduction
         </h1>
         <p>
-          Photogrammetry is the process of collecting pictures of an object and converting them into a 3D model. One can walk around an object and get a rough estimate of how big it is, using this same concept, the software can stitch together multiple images into one 3D model. Photogrammetry has its advantages and disadvantages compared to conventional 3D modeling techniques such as LiDAR. LiDAR is only good for small to medium-sized objects due to the range of the laser. However, photogrammetry only requires pictures, so creating a 3D model can be possible for anything as small as microorganisms to extremely large areas such as ruins of an ancient temple. The reason why we are testing 3D reproducibility at high accuracy is to ensure that the helmets that are being manufactured are consistent with the CAD models. This includes both 3D printed parts in the lab and with unknown companies that produce these final products in different materials. Additionally, deformation occurs when a person wears the helmet as the material can stretch and cause permanent deformation in the future. These slight discrepancies in manufacturing and wear can cause the algorithm to be inaccurate and represent an unrealistic version of the brain inside the head. It is incredibly important to get the right distances from the sensors and the plane that is created by the x, y, and z sensors to calibrate the algorithm consistently. 
+          Photogrammetry is the process of collecting pictures of an object and converting them into a 3D model. One can walk around an object and get a rough estimate of how big it is, using this same concept, the software can stitch together multiple images into one 3D model. Photogrammetry has its advantages and disadvantages compared to conventional 3D modeling techniques such as LiDAR. LiDAR is only good for small to medium-sized objects due to the range of the laser. However, photogrammetry only requires pictures, so creating a 3D model can be possible for anything as small as microorganisms to extremely large areas such as ruins of an ancient temple. 
         </p>
       </div>
       <div class="center-text">
@@ -146,26 +144,32 @@
         <h3 id="3.2">
           3.2 Meshroom
         </h3>
-        <p>
-          Proceeding to use a software helped the accuracy improve. Uploading around 100 images to the software, it took around two hours to process. However, the models came out to be more detailed than what the app could produce. The diameter error was still in the range of 12.89%, which is still inaccurate for our standards. The extrusion error was less than a percentage, coming around 0.79%. Again, this could have been due to the fact that I use these smaller details to scale the entire model to the appropriate size. There are no limitations on how many images you can upload to the computer software, hence, having more images will increase accuracy. This, however, will increase the processing time considerably. 100 images took around 2 hours and 300 images took around 3.5 hours.
-        </p>
-            <img class="researchimg" src="../images/PhotogrammetryMeshroom1.png" alt="Meshroom Results">
-          <figcaption class="caption">
-            Figure 3) Results of the photogrammetry model created by Meshroom. The error for the diameter is 12.89% and for the extrusions were 0.79%.
-            <hr>
-          </figcaption>
-            <model-viewer
-            class="center-fit"
-            src="../Obj/mesh (6).glb"
-            alt="3D model of the helmet"
-            camera-controls
-            auto-rotate
-          ></model-viewer>
-            <figcaption class="caption">
-            Model 2) 3D interactive model for the model created by Meshroom. Note that the inside of the model could not be reconstructed.
-            <hr>
-          </figcaption>
-      </div>
+        <div class="container2">
+            <div>
+            <img src="../images/PhotogrammetryMeshroom1.png" width="500px" alt="Meshroom Results">
+            <figcaption class="figcap">
+                Figure 3) Results of the photogrammetry model created by Meshroom. The error for the diameter is 12.89% and for the extrusions were 0.79%.
+                <hr>
+            </figcaption>
+            </div>
+        </div>
+            <p>
+            Proceeding to use a software helped the accuracy improve. Uploading around 100 images to the software, it took around two hours to process. However, the models came out to be more detailed than what the app could produce. The diameter error was still in the range of 12.89%, which is still inaccurate for our standards. The extrusion error was less than a percentage, coming around 0.79%. Again, this could have been due to the fact that I use these smaller details to scale the entire model to the appropriate size. There are no limitations on how many images you can upload to the computer software, hence, having more images will increase accuracy. This, however, will increase the processing time considerably. 100 images took around 2 hours and 300 images took around 3.5 hours.
+            </p>
+                <div class="clear">
+                    <model-viewer
+                    class="center-fit"
+                    src="../Obj/mesh (6).glb"
+                    alt="3D model of the helmet"
+                    camera-controls
+                    auto-rotate
+                ></model-viewer>
+                    <figcaption class="caption">
+                    Model 2) 3D interactive model for the model created by Meshroom. Note that the inside of the model could not be reconstructed.
+                    <hr>
+                </figcaption>
+                </div>
+        </div>
       <div class="info-text">
         <h2 id="4.">
           4. Issues Related To Photogrammetry
@@ -214,7 +218,7 @@
           The models that were reconstructed from the images taken from the new setup were incredibly accurate. The diameter reading had an error of 1.71% which equates to a 1.36 mm difference. These were by far the best results that were acquired from the test. The distances between extruded parts were 1.45% which is a 0.16 mm difference. 
           The second figure below shows a software error that was introduced due to the dust particles on the stage. Though the model is represented poorly, the distances themselves are accurate. Measuring the diameter, the error was only 0.20% which is a 0.16 mm difference and the extruded parts had a 3.42% error, only a 0.40 mm difference. This result could be replicated for any object, not just the test piece. Since cross polarization eliminates reflections, black materials cannot be scanned using this method. If we put a helmet on top of this stand and take around 250 images, we can reliably say that the distances measured in the software will be accurate for our needs.
         </p>
-        <img class="researchimg2" src="../images/CrossPolarization.png" alt="Cross Polarized Images">
+        <img src="../images/CrossPolarization.png" alt="Cross Polarized Images">
         <figcaption class="caption">
           Figure 5) <b>A</b> displays the type of images I was using before. <b>B</b> are images from polarizing the light, hence any harsh shadows are removed. <b>C</b> is an image captured by cross polarizing the light.
           <hr>
