@@ -15,6 +15,7 @@ body {
   margin: 0pt;
   padding-bottom: 300pt;
   line-height: 1.5;
+  counter-reset: figures;
 }
 
 .imgbox {
@@ -49,21 +50,10 @@ body {
   margin-left: 5pt;
 }
 
-nav {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  /* 
-if we did this instead of the template it would be a problem:
-grid-auto-flow: column;
-*/
-  font: 120% system-ui;
-  text-align: center;
-}
-
 .container {
   width: 100%;
   display: flex;
   align-items: center;
-  border: thin solid black;
 }
 
 .container img {
@@ -74,6 +64,7 @@ grid-auto-flow: column;
 
 .JDheader {
   margin-bottom: -10pt;
+  margin-top: -13px;
   font-size: 20pt;
 }
 
@@ -172,7 +163,7 @@ table thead th {
   margin-left: auto;
 }
 
-.container2 {
+.leftcontainer {
   margin-top: 15px;
   margin-right: 10px;
   width: 100%;
@@ -184,4 +175,52 @@ table thead th {
 
 .clear {
   clear: both;
+}
+
+/* AYO CHECKKKK */
+figcaption {
+  counter-increment: figures; /* count the number of fig captions */
+}
+
+figcaption::before {
+  content: "Figure " counter(figures) ") "; /* display the figure number in the caption */
+}
+
+/*
+.model {
+  counter-increment: model; /* count the number of fig captions }
+
+.model::before {
+  content: "Model " counter(model) ") "; /* display the figure number in the caption
+}
+*/
+
+:target {
+  background-color: #f4d03f;
+  transition: 0.8s;
+}
+
+nav {
+  position: fixed;
+  top: center;
+  left: 0;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 35px;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.headernav {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  font-size: 15pt;
+  text-align: center;
+}
+
+#navbar {
+  transition: 0.5s;
 }

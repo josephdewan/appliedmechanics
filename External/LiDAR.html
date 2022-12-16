@@ -8,48 +8,44 @@
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
-    <title>LiDAR - Joseph Dewan</title>
-    <link rel="stylesheet" href="theme.css"/>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <title>LiDAR</title>
+    <link rel="stylesheet" href="/External/theme.css"/>
     <style>
-      
     </style>
   </head>
-  <body>
-    <header class="center-text">
-      <div class="center-text">
-        <a href="https://appliedmechanicslab.github.io/Team.html"> 
-          <img src="../images/header.png" alt="Header Imgage" height="500pt">
-        </a>
-      </div>
-      <h1>
-        <a href="https://appliedmechanicslab.github.io/Team.html">
-          Applied Mechanics Lab - Brown University
-        </a>
-      </h1>
-      <hr />
-      <div class="center-text">
-        <p class="leftMargin">
-          <nav>
-            <p>
-            Research: &nbsp; 
-            <a class="link1" href="../External/LiDAR.html"  target="_blank">LiDAR &nbsp; </a>
-            |&nbsp;
-            <a class="link1" href="../External/Photogrammetry.html" target="_blank">Photogrammetry &nbsp;</a>
-            |&nbsp;
-            <!-- <a class="link1" href="../External/SoccerBallIndentation.html" target="_blank">Soccer Ball Indentation &nbsp</a>
-            |&nbsp; -->
-          </p>
-          </nav>
-        </p>
-      </div>
-      <div>
-        <p class="JDheader">
-          <a class="link1" href="../index.html">
-            Joseph Dewan
-          </a>
-        </p>
-      </div>
-    </header>
+
+  <div id="header"></div>
+
+  <nav id="navbar">
+    <ol class="myOL">
+      1.<a class="link1" href="#1."> Proposed Plan</a>
+      <br>
+      2.<a class="link1" href="#2."> Testing Routine & Methodology</a>
+      <br>
+      3.<a class="link1" href="#3."> Results</a>
+      <br>
+        <ol>
+        3.1<a class="link1" href="#3.1"> Finding A LInear Relationship</a>
+        <br>
+        3.2<a class="link1" href="#3.2"> Testing Different Geometry</a>
+        <br>
+        3.3<a class="link1" href="#3.3"> Acquiring More Detail</a>
+        <br>
+        </ol>
+      4.<a class="link1" href="#4."> Conclusion</a>
+      <br>
+    </ol>
+  </nav>
     
     <main>
       <div class="bodymargin2">
@@ -64,7 +60,7 @@
       </div>
       <div class="center-text">
         <ol class="myOL">
-          1.<a class="link1" href="#1."> Proposed Plan With LiDAR</a>
+          1.<a class="link1" href="#1."> Proposed Plan</a>
           <br>
           2.<a class="link1" href="#2."> Testing Routine & Methodology</a>
           <br>
@@ -85,7 +81,7 @@
       </div>
       <div class="info-text">
         <h2 id="1.">
-          1. Proposed Plan With LiDAR Technology
+          1. Proposed Plan
         </h2>
         <p>
           Every modern iPhone is equipped with LiDAR technology that essentially emits an infrared laser. This laser will reflect off of an object and return back to a sensor where the point distance will be measured. Using these point clouds, the entire object can be reconstructed through a software program. Scanning the object with this LiDAR sensor will help create 3D models that are able to be measured in 3D space.        
@@ -114,12 +110,12 @@
         </p>
         <img class="researchimg2" src="../images/LiDAR1.png" alt="Trino Diameter Scan Results">
         <figcaption class="caption">
-          Figure 1) <b>A</b> displays the rectangular pieces I scanned and <b>B</b> is the measured length of the piece in a CAD software.
+          <b>A</b> displays the rectangular pieces I scanned and <b>B</b> is the measured length of the piece in a CAD software.
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/LiDAR2.png" alt="Trino Extruded Part Results">
         <figcaption class="caption">
-          Figure 2) <b>A</b> are the physical and LiDAR values alognside their respective errors. <b>B</b> is the graph of the error vs physical distance. You can clearly see that there is not a linear relationship that we can use to calibrate the sensor. 
+          <b>A</b> are the physical and LiDAR values alognside their respective errors. <b>B</b> is the graph of the error vs physical distance. You can clearly see that there is not a linear relationship that we can use to calibrate the sensor. 
           <hr>
         </figcaption>
         <h3 id="3.2">
@@ -130,12 +126,12 @@
         </p>
             <img class="researchimg2" src="../images/LiDAR3.png" alt="Meshroom Results">
           <figcaption class="caption">
-            Figure 3) <b>A</b> is the physical measurement of the model and <b>B</b> is the distance measured by the LiDAR sensor. The error was 2.75% with a difference of only 0.28 mm. 
+            <b>A</b> is the physical measurement of the model and <b>B</b> is the distance measured by the LiDAR sensor. The error was 2.75% with a difference of only 0.28 mm. 
           <hr>
           </figcaption>
           <img class="researchimg2" src="../images/LiDAR4.png" alt="Meshroom Results">
           <figcaption class="caption">
-            Figure 4) <b>A</b> is a larger measurement of the diameter on the model and <b>B</b> is the distance measured by the LiDAR sensor. The error was 0.68% with a difference of only 0.54 mm.
+            <b>A</b> is a larger measurement of the diameter on the model and <b>B</b> is the distance measured by the LiDAR sensor. The error was 0.68% with a difference of only 0.54 mm.
             <hr>
           </figcaption>
             <model-viewer
@@ -146,7 +142,7 @@
             auto-rotate
           ></model-viewer>
             <figcaption class="caption">
-            Model 1) 3D interactive model created by the app called Qclone. This is the most accurate model reconstructed.
+            3D interactive model created by the app called Qclone. This is the most accurate model reconstructed.
             <hr>
           </figcaption>
       </div>
@@ -158,12 +154,12 @@
       </p>
         <img class="researchimg2" src="../images/LiDAR5.png" alt="Meshroom Results">
         <figcaption class="caption">
-          Figure 5) <b>A</b> is the physical diameter <b>B</b> is the diameter measured by the LiDAR sensor. The error was 17.86% with a difference of 14.20 mm. 
+          <b>A</b> is the physical diameter <b>B</b> is the diameter measured by the LiDAR sensor. The error was 17.86% with a difference of 14.20 mm. 
         <hr>
         </figcaption>
         <img class="researchimg2" src="../images/LiDAR6.png" alt="Meshroom Results">
         <figcaption class="caption">
-          Figure 6) <b>A</b> is the physical measurement of the model and <b>B</b> is the distance measured by the LiDAR sensor. The error was 16.10% with a difference of 1.86 mm. 
+          <b>A</b> is the physical measurement of the model and <b>B</b> is the distance measured by the LiDAR sensor. The error was 16.10% with a difference of 1.86 mm. 
         <hr>
         </figcaption>
         <model-viewer
@@ -174,7 +170,7 @@
             auto-rotate
           ></model-viewer>
             <figcaption class="caption">
-            Model 2) Interactive model of the most detailed LiDAR scan.
+            Interactive model of the most detailed LiDAR scan.
             <hr>
           </figcaption>
       <div class="info-text">
@@ -182,7 +178,7 @@
           4. Conclusion
         </h2>
         <p>
-          With this LiDAR technology, the models were able to be recontructd with either high accuracy or detail. It seems that there is a point where the adding details only hindered the performance of accuracy while it did increase resolution of the reconstructed moodel. Though these two models had detail and accuracy, the realiablity of the process is undetermined. I did manage to obtain an accuracy of &lt; 1.00 mm accuracy, however, the models were susceptible to failure and many times the render would not even be produced due to lighting or feature issues. Hence for long term use, a higher resolution scanner will be required to capture all the detail. Furthermore, the back side of the object is unable to rendered as that requires the movement of the object. However, even with these downsides, the accessibility of LiDAR is appealing to the average consumer with a phone. You will be able to create these models without the need for special software or a powerful computer, and with improved phone specs, this could be a viable option in the future. This method was tested extensively to capture models with &lt; 1.00 mm, which was proved that it could be done even though literature online says otherwise. Hunting for a better method to get a accurate and detailed model, I decided to try <a class="link1" href="Photogrammetry.html">Photogrammetry</a>.
+          With this LiDAR technology, the models were able to be recontructd with either high accuracy or detail. It seems that there is a point where the adding details only hindered the performance of accuracy while it did increase resolution of the reconstructed moodel. Though these two models had detail and accuracy, the realiablity of the process is undetermined. I did manage to obtain an accuracy of &lt; 1.00 mm accuracy, however, the models were susceptible to failure and many times the render would not even be produced due to lighting or feature issues. Hence for long term use, a higher resolution scanner will be required to capture all the detail. Furthermore, the back side of the object is unable to rendered as that requires the movement of the object. However, even with these downsides, the accessibility of LiDAR is appealing to the average consumer with a phone. You will be able to create these models without the need for special software or a powerful computer, and with improved phone specs, this could be a viable option in the future. This method was tested extensively to capture models with &lt; 1.00 mm, which was proved that it could be done even though literature online says otherwise. Hunting for a better method to get a accurate and detailed model, I decided to try <a class="link1" href="/External/Photogrammetry.html#photogrammetrysection" target="photogrammetry">Photogrammetry</a>.
         </p>
       </div>
       <div class="center-text">
