@@ -8,23 +8,68 @@
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-      crossorigin="anonymous"
-    ></script>
     <script>
-      $(function () {
-        $("#header").load("../header.html");
-      });
+      // When the user scrolls down 20px from the top of the document, slide down the navbar
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 450 ||
+          document.documentElement.scrollTop > 450
+        ) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-1200px";
+        }
+      }
     </script>
     <title>Photogrammetry</title>
-    <link rel="stylesheet" href="theme.css"/>
-    <style>
-    </style>
+    <link rel="stylesheet" href="./External/theme.css" />
+    <style></style>
   </head>
 
-  <div id="header"></div>
+  <header class="center-text">
+    <div>
+      <a href="https://appliedmechanicslab.github.io/Team.html">
+        <img src="./images/header.png" alt="Header Image" />
+      </a>
+    </div>
+    <h1>
+      <a href="https://appliedmechanicslab.github.io/Team.html" target="Team">
+        Applied Mechanics Lab - Brown University
+      </a>
+    </h1>
+    <hr />
+    <div class="headernav">
+      <p>
+        Research: &nbsp;
+        <a class="link1" href="./External/LiDAR.html" target="LiDAR"
+          >LiDAR &nbsp;
+        </a>
+        |&nbsp;
+        <a
+          class="link1"
+          href="./External/Photogrammetry.html"
+          target="photogrammetry"
+          >Photogrammetry &nbsp;</a
+        >
+        |&nbsp;
+        <!-- <a class="link1" href="External/SoccerBallIndentation.html" target="_blank">Soccer Ball Indentation &nbsp</a>
+            |&nbsp; -->
+      </p>
+    </div>
+    <div>
+      <p class="JDheader">
+        <a class="link1" href="/index.html" target="JosephDewan">
+          Joseph Dewan
+        </a>
+      </p>
+    </div>
+  </header>
+</html>
+
+
   <nav id="navbar">
     <ol class="myOL">
       1.<a class="link1" href="#1."> Proposed Plan</a>
