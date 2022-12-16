@@ -8,55 +8,58 @@
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
-    <title>Photogrammetry - Joseph Dewan</title>
-    <link rel="stylesheet" href="theme.css"/>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#header").load("/header.html");
+      });
+    </script>
+    <title>Joseph Dewan</title>
+    <link rel="stylesheet" href="/External/theme.css"/>
     <style>
-      
     </style>
   </head>
-<body>
-    <header class="center-text">
-      <div class="center-text">
-        <a href="https://appliedmechanicslab.github.io/Team.html"> 
-          <img src="../images/header.png" alt="Header Imgage" height="500pt">
-        </a>
-      </div>
-      <h1>
-        <a href="https://appliedmechanicslab.github.io/Team.html">
-          Applied Mechanics Lab - Brown University
-        </a>
-      </h1>
-      <hr />
-      <div class="center-text">
-        <p class="leftMargin">
-          <nav>
-            <p>
-            Research: &nbsp; 
-            <a class="link1" href="../External/LiDAR.html"  target="_blank">LiDAR &nbsp; </a>
-            |&nbsp;
-            <a class="link1" href="../External/Photogrammetry.html" target="_blank">Photogrammetry &nbsp;</a>
-            |&nbsp;
-            <!-- <a class="link1" href="../External/SoccerBallIndentation.html" target="_blank">Soccer Ball Indentation &nbsp</a>
-            |&nbsp; -->
-          </p>
-          </nav>
-        </p>
-      </div>
-      <div>
-        <p class="JDheader">
-          <a class="link1" href="../index.html">
-            Joseph Dewan
-          </a>
-        </p>
-      </div>
-    </header>
-  </body>
+
+  <div id="header"></div>
+  <nav id="navbar">
+    <ol class="myOL">
+      1.<a class="link1" href="#1."> Proposed Plan</a>
+      <br>
+      2.<a class="link1" href="#2."> Initial Methodology</a>
+      <br>
+      3.<a class="link1" href="#3."> Results</a>
+      <br>
+      <ol>
+      3.1<a class="link1" href="#3.1"> Trino</a>
+      <br>
+      3.2<a class="link1" href="#3.2"> Meshroom</a>
+      <br>
+      </ol>
+      4.<a class="link1" href="#4."> Issues Related To Photogrammetry</a>
+      <br>
+      5.<a class="link1" href="#5."> Changing Methodology</a>
+      <br>
+      6.<a class="link1" href="#6."> New Results</a>
+      <br>
+        <ol>
+          6.1<a class="link1" href="#6.1"> Cross Polarized Meshroom</a>
+          <br>
+          6.2<a class="link1" href="#6.2"> Reality Capture</a>
+          <br>
+        </ol>
+      7.<a class="link1" href="#7."> Conclusion</a>
+    </ol>
+  </nav>
 
   <body>
     <main>
       <div class="bodymargin2">
       <div class="info-text">
-        <h1>
+        <h1 id="photogrammetrysection">
           Photogrammetry
         </h1>
         <p>
@@ -65,7 +68,7 @@
       </div>
       <div class="center-text">
         <ol class="myOL">
-          1.<a class="link1" href="#1."> Proposed Plan With Photogrammetry</a>
+          1.<a class="link1" href="#1."> Proposed Plan</a>
           <br>
           2.<a class="link1" href="#2."> Initial Methodology</a>
           <br>
@@ -95,7 +98,7 @@
       </div>
       <div class="info-text">
         <h2 id="1.">
-          1. Proposed Plan With Photogrammetry
+          1. Proposed Plan
         </h2>
         <p>
           I will first test different types of apps and software to get a direct comparison of the 3D models they produce. Then I will move forward to improving my pictures and test pieces that yield the most accurate and detailed models. First, by using a paid app called Trino, we can use this photogrammetry technique right on the phone. Directing the user to walk around the object, it displays an area in AR where the pictures must be taken. Then a software called Meshroom was then used to gather more detail and accuracy. It is a free open-source software that anyone can use. Though it does require higher computing processors and time, it resulted in one of the best results. However, using another software called Reality Capture, it enabled the user to use features such as auto scaling and it resulted in the best result with the fastest processing time.        
@@ -124,12 +127,12 @@
         </p>
         <img class="researchimg2" src="../images/PhotogrammetryTrino1.png" alt="Trino Diameter Scan Results">
         <figcaption class="caption">
-          Figure 1) <b>A</b> displays the real measurement from a caliper and <b>B</b> is the measured diameter from the Trino app. The error is 15.90%.
+          <b>A</b> displays the real measurement from a caliper and <b>B</b> is the measured diameter from the Trino app. The error is 15.90%.
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryTrino2.png" alt="Trino Extruded Part Results">
         <figcaption class="caption">
-          Figure 2) <b>A</b> represents the measurement of the extruded part and <b>B</b> is the Trino app distance. The error is 5.31%.
+          <b>A</b> represents the measurement of the extruded part and <b>B</b> is the Trino app distance. The error is 5.31%.
           <hr>
         </figcaption>
         <model-viewer
@@ -140,7 +143,7 @@
         auto-rotate
       ></model-viewer>
         <figcaption class="caption">
-        Model 1) Results of the photogrammetry model created by Trino.
+        Results of the photogrammetry model created by Trino.
         <hr>
       </figcaption>
         <h3 id="3.2">
@@ -151,7 +154,7 @@
         </p>
             <img class="researchimg" src="../images/PhotogrammetryMeshroom1.png" alt="Meshroom Results">
           <figcaption class="caption">
-            Figure 3) Results of the photogrammetry model created by Meshroom. The error for the diameter is 12.89% and for the extrusions were 0.79%.
+            Results of the photogrammetry model created by Meshroom. The error for the diameter is 12.89% and for the extrusions were 0.79%.
             <hr>
           </figcaption>
             <model-viewer
@@ -162,7 +165,7 @@
             auto-rotate
           ></model-viewer>
             <figcaption class="caption">
-            Model 2) 3D interactive model for the model created by Meshroom. Note that the inside of the model could not be reconstructed.
+            3D interactive model for the model created by Meshroom. Note that the inside of the model could not be reconstructed.
             <hr>
           </figcaption>
       </div>
@@ -199,7 +202,7 @@
            </p>
            <img class="researchimg2" src="../images/PhotogrammetrySetup.png" alt="Cross Polarizing Setup">
            <figcaption class="caption">
-             Figure 4) Left image displays a custom linear polarzing light emitter with angles adjustable from 0 to 180 degrees. The right  image is the view from the square cut-out. This was made to take pictures of an object with dark background that absorbes 100% of light during a photoshoot. 
+             Left image displays a custom linear polarzing light emitter with angles adjustable from 0 to 180 degrees. The right  image is the view from the square cut-out. This was made to take pictures of an object with dark background that absorbes 100% of light during a photoshoot. 
              <hr>
            </figcaption>
       </div>
@@ -216,12 +219,12 @@
         </p>
         <img class="researchimg2" src="../images/CrossPolarization.png" alt="Cross Polarized Images">
         <figcaption class="caption">
-          Figure 5) <b>A</b> displays the type of images I was using before. <b>B</b> are images from polarizing the light, hence any harsh shadows are removed. <b>C</b> is an image captured by cross polarizing the light.
+          <b>A</b> displays the type of images I was using before. <b>B</b> are images from polarizing the light, hence any harsh shadows are removed. <b>C</b> is an image captured by cross polarizing the light.
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryMeshroom2.png" alt="">
         <figcaption class="caption">
-          Figure 6) <b>A</b> are the diameter readings from the images gathered from cross polarization and the errro was 1.71% <b>B</b> represents a measurement taken of a finer detail of the model, between extruded cubes. The error for this was 1.45%.
+          <b>A</b> are the diameter readings from the images gathered from cross polarization and the errro was 1.71% <b>B</b> represents a measurement taken of a finer detail of the model, between extruded cubes. The error for this was 1.45%.
           <hr>
         </figcaption>
         <model-viewer
@@ -232,12 +235,12 @@
             auto-rotate
           ></model-viewer>
           <figcaption class="caption">
-            Model 3) A more detailed model reconstruction created from cross polarization and darker background.
+            A more detailed model reconstruction created from cross polarization and darker background.
             <hr>
           </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryMeshroom3.png" alt="">
         <figcaption class="caption">
-          Figure 7) Models reconstructed in Meshroom with artifacts and noise in the images. Even with the extraneous parts, <b>A</b> had an error of 0.20% for the diameter, and <b>B</b> had an error of 3.42% for the extruded part. Still, the difference is &lt; 0.50mm. This is the most accurate model that has been created.
+          Models reconstructed in Meshroom with artifacts and noise in the images. Even with the extraneous parts, <b>A</b> had an error of 0.20% for the diameter, and <b>B</b> had an error of 3.42% for the extruded part. Still, the difference is &lt; 0.50mm. This is the most accurate model that has been created.
           <hr>
         </figcaption>
         <h3 id="6.2">
@@ -248,17 +251,17 @@
         </p>
         <img class="researchimg2" src="../images/PhotogrammetryReality1.png" alt="">
         <figcaption class="caption">
-          Figure 8) Sensor housing error of 1.57%
+          Sensor housing error of 1.57%
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryReality2.png" alt="">
         <figcaption class="caption">
-          Figure 9) Strap width error of 2.62%
+          Strap width error of 2.62%
           <hr>
         </figcaption>
         <img class="researchimg2" src="../images/PhotogrammetryReality3.png" alt="">
         <figcaption class="caption">
-          Figure 10) Frame segment error of 0.78%
+          Frame segment error of 0.78%
           <hr>
         </figcaption>
         <div class="imgbox">
@@ -270,7 +273,7 @@
             auto-rotate
           ></model-viewer>
           <figcaption class="caption">
-            Model 4) The most detailed and accurate photogrammetry model reconstruction of the helmet without the need of special equipment.
+            The most detailed and accurate photogrammetry model reconstruction of the helmet without the need of special equipment.
             <hr>
           </figcaption>
         </div>
