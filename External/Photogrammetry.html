@@ -41,24 +41,19 @@
       </a>
     </h1>
     <hr />
+    
     <div class="headernav">
       <p>
         Research: &nbsp;
-        <a class="link1" href="LiDAR.html" target="LiDAR"
-          >LiDAR &nbsp;
-        </a>
+        <a class="link1" href="LiDAR.html" target="LiDAR">LiDAR &nbsp;</a>
         |&nbsp;
-        <a
-          class="link1"
-          href="Photogrammetry.html"
-          target="photogrammetry"
-          >Photogrammetry &nbsp;</a
-        >
+        <a class="link1" href="Photogrammetry.html" target="photogrammetry">Photogrammetry &nbsp;</a>
         |&nbsp;
-        <!-- <a class="link1" href="External/SoccerBallIndentation.html" target="_blank">Soccer Ball Indentation &nbsp</a>
-            |&nbsp; -->
+        <a class="link1" href="NewHelmetDesign.html" target="NewHelmet">New Helmet Design &nbsp</a>
+        |&nbsp;
       </p>
     </div>
+
     <div>
       <p class="JDheader">
         <a class="link1" href="../index.html" target="JosephDewan">
@@ -95,6 +90,8 @@
           <br>
         </ol>
       7.<a class="link1" href="#7."> Conclusion</a>
+      <br>
+      <a class="link1" href="#top">Back to Top</a>
     </ol>
   </nav>
 
@@ -137,8 +134,8 @@
             </ol>
           7.<a class="link1" href="#7."> Conclusion</a>
         </ol>
-
       </div>
+
       <div class="info-text">
         <h2 id="1.">
           1. Proposed Plan
@@ -180,12 +177,12 @@
         </figcaption>
         <model-viewer
         class="center-fit"
-        src="../Obj/Trnio Dome.glb"
+        src="../Obj/Summer/Trnio Dome.glb"
         alt="3D model of the helmet"
         camera-controls
         auto-rotate
       ></model-viewer>
-        <figcaption class="caption">
+        <figcaption class="modelcaption">
         Results of the photogrammetry model created by Trino.
         <hr>
       </figcaption>
@@ -202,15 +199,16 @@
           </figcaption>
             <model-viewer
             class="center-fit"
-            src="../Obj/mesh (6).glb"
+            src="../Obj/Summer/mesh (6).glb"
             alt="3D model of the helmet"
             camera-controls
             auto-rotate
           ></model-viewer>
-            <figcaption class="caption">
+            <figcaption class="modelcaption">
             3D interactive model for the model created by Meshroom. Note that the inside of the model could not be reconstructed.
             <hr>
           </figcaption>
+
       </div>
       <div class="info-text">
         <h2 id="4.">
@@ -233,22 +231,25 @@
         </ol>
         </p>
       </div>
+
       <div class="info-text">
         <h2 id="5.">
           5. Changing Methodology
         </h2>
         <p>
           Taking it one step further to resolve problems 2 and 3, a stage was created. This stage is composed of black material that is absorbent to any light source. This black flock material absorbs 99% of light at certain angles, making it impossible for a camera to pick up. Darker material might help seperate the object from the background, however, it also makes dust particles more visible which can make the photogrammetry software crash. It is important to keep any particles away from the black material. The proposed plan was to take pictures of the object on a black stand and background so that the software is only able to replicate the lit areas. All the lights in the room were turned off and this eliminated any additional light reflection from surfaces around the test piece. This gave the software the illusion that the object was floating in space. The model could be recreated on all sides and this helped the accuracy improve drastically. 
-          <br>
-            <p>polarization was also used. Cross polarization is a method in which linear polarized light is filtered by a circular polarizer. To create this, I made a frame with a square hole in order to fit a DSLR or iPhone camera in the middle. The design consisted of a linear polarizer in front of led strips that were soldered together in a loop. The arms of the frame are attached to tosional hinges in order to hold the arms stationary at a desired angle. The design goal was to create something with high flexability to accomodate any surfaces that might need to get scanned in the future. Using this light source alongside a circular polarizer on the camera lense, the surface highlights and shadows were completely removed. Cross-polarizing the light yielded the best and most accurate images that I could have acquired. Since the light removed any shadows, I could pause the photo imaging process and flip the object, then resume the same process as before.
-            </p>
-           </p>
-           <img class="researchimg2" src="../images/PhotogrammetrySetup.png" alt="Cross Polarizing Setup">
-           <figcaption class="caption">
-             Left image displays a custom linear polarzing light emitter with angles adjustable from 0 to 180 degrees. The right  image is the view from the square cut-out. This was made to take pictures of an object with dark background that absorbes 100% of light during a photoshoot. 
-             <hr>
-           </figcaption>
+        </p>
+        <p>
+          Polarization was also used. Cross polarization is a method in which linear polarized light is filtered by a circular polarizer. To create this, I made a frame with a square hole in order to fit a DSLR or iPhone camera in the middle. The design consisted of a linear polarizer in front of led strips that were soldered together in a loop. The arms of the frame are attached to tosional hinges in order to hold the arms stationary at a desired angle. The design goal was to create something with high flexability to accomodate any surfaces that might need to get scanned in the future. Using this light source alongside a circular polarizer on the camera lense, the surface highlights and shadows were completely removed. Cross-polarizing the light yielded the best and most accurate images that I could have acquired. Since the light removed any shadows, I could pause the photo imaging process and flip the object, then resume the same process as before.
+        </p>
+           
+        <img class="researchimg2" src="../images/PhotogrammetrySetup.png" alt="Cross Polarizing Setup">
+        <figcaption class="caption">
+          Left image displays a custom linear polarzing light emitter with angles adjustable from 0 to 180 degrees. The right  image is the view from the square cut-out. This was made to take pictures of an object with dark background that absorbes 100% of light during a photoshoot. 
+        <hr>
+        </figcaption>
       </div>
+      
       <div class="info-text">
         <h2 id="6.">
           6. New Results
@@ -265,23 +266,24 @@
           <b>A</b> displays the type of images I was using before. <b>B</b> are images from polarizing the light, hence any harsh shadows are removed. <b>C</b> is an image captured by cross polarizing the light.
           <hr>
         </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryMeshroom2.png" alt="">
+        
+        <img class="researchimg2" src="../images/PhotogrammetryMeshroom2.png" alt="Reconstructed model created using cross polarization">
         <figcaption class="caption">
           <b>A</b> are the diameter readings from the images gathered from cross polarization and the errro was 1.71% <b>B</b> represents a measurement taken of a finer detail of the model, between extruded cubes. The error for this was 1.45%.
           <hr>
         </figcaption>
         <model-viewer
             class="center-fit"
-            src="../Obj/Test7Cleaned(S)(Meshmixer).glb"
+            src="../Obj/Summer/Test7Cleaned(S)(Meshmixer).glb"
             alt="3D model of the helmet"
             camera-controls
             auto-rotate
           ></model-viewer>
-          <figcaption class="caption">
+          <figcaption class="modelcaption">
             A more detailed model reconstruction created from cross polarization and darker background.
             <hr>
           </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryMeshroom3.png" alt="">
+        <img class="researchimg2" src="../images/PhotogrammetryMeshroom3.png" alt="Meshroom created 3D model">
         <figcaption class="caption">
           Models reconstructed in Meshroom with artifacts and noise in the images. Even with the extraneous parts, <b>A</b> had an error of 0.20% for the diameter, and <b>B</b> had an error of 3.42% for the extruded part. Still, the difference is &lt; 0.50mm. This is the most accurate model that has been created.
           <hr>
@@ -292,17 +294,17 @@
         <p>
           We can replicate sub-millimeter accuracy in a lab, but what about in the field and in the real world where you might not have access to these materials? This is where a more advanced software is utilized. Reality Capture is a pay-by-model software where the settings are more customizable to the user. For example, up to this point, I have been using some known distance or size of the object in order to scale the entire piece. However, using this software, I can set the distances automatically, which allows for even greater accuracy. Moving on from the test piece, I wanted to try the helmet on a fake model. The model was set up on the plane wood stage with infrared markers. Once around 200 images were taken with a regular iPhone, the images were uploaded to the computer. Though the preprocessing settings took longer than Meshroom, the results were better. Measuring multiple distances and features on the helmet itself, the results are surprising. The sensor housing had an error of 1.57% which is a difference of 0.53 mm. The strap size error was around 2.62% which is a difference of 0.64 mm. Lastly, the frame segment had the lowest error of 0.78% which is only 0.29 mm!
         </p>
-        <img class="researchimg2" src="../images/PhotogrammetryReality1.png" alt="">
+        <img class="researchimg2" src="../images/PhotogrammetryReality1.png" alt="Reality capture helmet reconstruction">
         <figcaption class="caption">
           Sensor housing error of 1.57%
           <hr>
         </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryReality2.png" alt="">
+        <img class="researchimg2" src="../images/PhotogrammetryReality2.png" alt="Reality capture helmet reconstruction">
         <figcaption class="caption">
           Strap width error of 2.62%
           <hr>
         </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryReality3.png" alt="">
+        <img class="researchimg2" src="../images/PhotogrammetryReality3.png" alt="Reality capture helmet reconstruction">
         <figcaption class="caption">
           Frame segment error of 0.78%
           <hr>
@@ -310,12 +312,12 @@
         <div class="imgbox">
           <model-viewer
             class="center-fit"
-            src="../Obj/HeadTest2Cleaned.glb"
+            src="../Obj/Summer/HeadTest2Cleaned.glb"
             alt="3D model of the helmet"
             camera-controls
             auto-rotate
           ></model-viewer>
-          <figcaption class="caption">
+          <figcaption class="modelcaption">
             The most detailed and accurate photogrammetry model reconstruction of the helmet without the need of special equipment.
             <hr>
           </figcaption>

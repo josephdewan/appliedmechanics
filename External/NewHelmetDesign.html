@@ -1,296 +1,1215 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta hyyp-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script
-        type="module"
-        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-        ></script>
-        <title>New Helmet Design - Joseph Dewan</title>
-        <link rel="stylesheet" href="theme.css"/>
-        <style>   
-        </style>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta hyyp-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <script>
+      // When the user scrolls down 20px from the top of the document, slide down the navbar
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 450 ||
+          document.documentElement.scrollTop > 450
+        ) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-1200px";
+        }
+      }
+    </script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+      });
+    </script>
+    <title>New Helmet Design</title>
+    <link rel="stylesheet" href="theme.css" />
+    <style></style>
+  </head>
 
-    <header class="center-text">
-      <div class="center-text">
-        <a href="https://appliedmechanicslab.github.io/Team.html"> 
-          <img src="../images/header.png" alt="Header Imgage" height="500pt">
+  <header class="center-text">
+    <div>
+      <a href="https://appliedmechanicslab.github.io/Team.html">
+        <img src="../images/header.png" alt="Header Image" />
+      </a>
+    </div>
+    <h1>
+      <a href="https://appliedmechanicslab.github.io/Team.html" target="Team">
+        Applied Mechanics Lab - Brown University
+      </a>
+    </h1>
+    <hr />
+
+    <div class="headernav">
+      <p>
+        Research: &nbsp;
+        <a class="link1" href="LiDAR.html" target="LiDAR">LiDAR &nbsp;</a>
+        |&nbsp;
+        <a class="link1" href="Photogrammetry.html" target="photogrammetry"
+          >Photogrammetry &nbsp;</a
+        >
+        |&nbsp;
+        <a class="link1" href="NewHelmetDesign.html" target="NewHelmet"
+          >New Helmet Design &nbsp</a
+        >
+        |&nbsp;
+      </p>
+    </div>
+
+    <div>
+      <p class="JDheader">
+        <a class="link1" href="../index.html" target="JosephDewan">
+          Joseph Dewan
         </a>
-      </div>
-      <h1>
-        <a href="https://appliedmechanicslab.github.io/Team.html">
-          Applied Mechanics Lab - Brown University
-        </a>
-      </h1>
-      <hr />
-      <div class="center-text">
-        <p class="leftMargin">
-          <nav>
-            <p>
-            Research: &nbsp; 
-            <a class="link1" href="../External/LiDAR.html"  target="_blank">LiDAR &nbsp; </a>
-            |&nbsp;
-            <a class="link1" href="../External/Photogrammetry.html" target="_blank">Photogrammetry &nbsp;</a>
-            |&nbsp;
-            <a class="link1" href="../External/NewHelmetDesign.html" target="_blank">New Helmet Design &nbsp</a>
-            |&nbsp; 
-          </p>
-          </nav>
-        </p>
-      </div>
-      <div>
-        <p class="JDheader">
-          <a class="link1" href="../index.html">
-            Joseph Dewan
-          </a>
-        </p>
-      </div>
-    </header>
+      </p>
+    </div>
+  </header>
+
+  <nav id="navbar">
+    <ol class="myOL">
+      1.
+      <a class="link1" href="#1.">Theory</a>
+      <br />
+      2.
+      <a class="link1" href="#2.">Methodology</a>
+      <br />
+      3.
+      <a class="link1" href="#3.">Design</a>
+      <br />
+      <ol>
+        3.1
+        <a class="link1" href="#3.1">Back Mount</a>
+        <br />
+        3.2
+        <a class="link1" href="#3.2">Centripetal Lock</a>
+        <br />
+      </ol>
+      4.
+      <a class="link1" href="#4.">Results</a>
+      <br />
+      5.
+      <a class="link1" href="#5.">Discussion</a>
+      <br />
+      6.
+      <a class="link1" href="#6.">Future Improvements</a>
+      <br />
+      7.
+      <a class="link1" href="#7.">Conclusion</a>
+      <br />
+      <a class="link1" href="#top">Back to Top</a>
+    </ol>
+  </nav>
 
   <body>
     <main>
       <div class="bodymargin2">
-      <div class="info-text">
-        <h1>
-          Introduction
+        <h1 id="NewHelmetDesign">
+          Centripetal Locking To Reduce Angular Acceleration of The Head During
+          Impact
         </h1>
+        <h1 id="introdiction">Introduction</h1>
         <p>
-          Photogrammetry is the process of collecting pictures of an object and converting them into a 3D model. One can walk around an object and get a rough estimate of how big it is, using this same concept, the software can stitch together multiple images into one 3D model. Photogrammetry has its advantages and disadvantages compared to conventional 3D modeling techniques such as LiDAR. LiDAR is only good for small to medium-sized objects due to the range of the laser. However, photogrammetry only requires pictures, so creating a 3D model can be possible for anything as small as microorganisms to extremely large areas such as ruins of an ancient temple. 
+          During a blunt impact, both linear and angular acceleration is
+          introduced to the head. Depending on where the impact occurs, the head
+          can rotate at an accelerated speed and the neck will not be able to
+          compensate for the force. Injuries can occur within the neck region,
+          which is not usually considered when imagining an impact directly on
+          the head. Numerous variables can contribute to a concussion such as
+          shearing, loading of the skull, brain deformation etc. The problems
+          caused by angular acceleration should be examined thoroughly. A
+          centripetal locking mechanism was developed to actuate a certain
+          angular acceleration due to centripetal forces to prevent the head
+          from rotating any further. This was attached to a wire which ran
+          through a system of 3D-printed parts to the side of a helmet. The
+          force vector acts perpendicular to the impact, reducing the angular
+          acceleration of the head and neck would decrease the injuries that a
+          person receives exponentially.
         </p>
-      </div>
-      <div class="center-text">
-        <ol class="myOL">
-          1.<a class="link1" href="#1."> Proposed Plan With Photogrammetry</a>
-          <br>
-          2.<a class="link1" href="#2."> Initial Methodology</a>
-          <br>
-          3.<a class="link1" href="#3."> Results</a>
-          <br>
-          <ol>
-          3.1<a class="link1" href="#3.1"> Trino</a>
-          <br>
-          3.2<a class="link1" href="#3.2"> Meshroom</a>
-          <br>
-          </ol>
-          4.<a class="link1" href="#4."> Issues Related To Photogrammetry</a>
-          <br>
-          5.<a class="link1" href="#5."> Changing Methodology</a>
-          <br>
-          6.<a class="link1" href="#6."> New Results</a>
-          <br>
-            <ol>
-              6.1<a class="link1" href="#6.1"> Cross Polarized Meshroom</a>
-              <br>
-              6.2<a class="link1" href="#6.2"> Reality Capture</a>
-              <br>
-            </ol>
-          7.<a class="link1" href="#7."> Conclusion</a>
-        </ol>
 
-      </div>
-      <div class="info-text">
-        <h2 id="1.">
-          1. Proposed Plan With Photogrammetry
-        </h2>
+        <div class="center-text">
+          <ol class="myOL">
+            1.
+            <a class="link1" href="#1.">Theory</a>
+            <br />
+            2.
+            <a class="link1" href="#2.">Methodology</a>
+            <br />
+            3.
+            <a class="link1" href="#3.">Design</a>
+            <br />
+            <ol>
+              3.1
+              <a class="link1" href="#3.1">Back Mount</a>
+              <br />
+              3.2
+              <a class="link1" href="#3.2">Centripetal Lock</a>
+              <br />
+            </ol>
+            4.
+            <a class="link1" href="#4.">Results</a>
+            <br />
+            5.
+            <a class="link1" href="#5.">Discussion</a>
+            <br />
+            6.
+            <a class="link1" href="#6.">Future Improvements</a>
+            <br />
+            7.
+            <a class="link1" href="#7.">Conclusion</a>
+          </ol>
+        </div>
+
+        <h2 id="1.">1. Theory</h2>
         <p>
-          I will first test different types of apps and software to get a direct comparison of the 3D models they produce. Then I will move forward to improving my pictures and test pieces that yield the most accurate and detailed models. First, by using a paid app called Trino, we can use this photogrammetry technique right on the phone. Directing the user to walk around the object, it displays an area in AR where the pictures must be taken. Then a software called Meshroom was then used to gather more detail and accuracy. It is a free open-source software that anyone can use. Though it does require higher computing processors and time, it resulted in one of the best results. However, using another software called Reality Capture, it enabled the user to use features such as auto scaling and it resulted in the best result with the fastest processing time.        
+          Research conducted by Rowan and others published in 2012 used
+          accelerometers on 355 football players and observed the impacts on the
+          head during games. They were able to record more than 300,000
+          subconcussive and 57 concussive impacts. They state that an angular
+          velocity of 28.3 rad/s and an angular acceleration of 6383 rad/s2
+          could lead to a 50% chance of a concussion. The subconcussive
+          threshold velocity and acceleration were established to be 5.5 rad/s
+          and 1230 rad/s2, respectively. Using linear regression lines that
+          measured the impact of concussions, they were able to calculate the
+          appropriate constant for the risk equation below $$ Risk = {1 \over 1
+          + e^{-(\alpha + \beta x)}} \tag{1} \label{riskeq} $$ where &alpha; =
+          −12.531 and &beta; = 0.002 (Rowson et al. 2012).
         </p>
-      </div>
-      <div class="info-text">
-        <h2 id="2.">
-          2. Initial Methodology
-        </h2>
         <p>
-          The object was placed on the wood slab with the markers. For the app, the pictures were taken and processed within the iPad application. For the computer software, you must walk 360 degrees around the object, taking 100-150 pictures in all angles and orientations. The pictures are then imported to Meshroom to be processed.
+          Hence, any acceleration removed from the body will reduce the risk of
+          injury by an exponential amount. The question to answer is how to
+          lower the acceleration of the head after a certain critical value is
+          reached. One solution is a centripetal locking mechanism, which is a
+          system that locks when a specific angular acceleration is achieved. If
+          one were to attach this mechanism to the head and constrain it from
+          accelerating past a certain threshold, it could save a person from
+          receiving a concussion and ultimately, long-term brain damage. This
+          system is most commonly used in seat belts in cars.
         </p>
-      </div>
-      <div class="info-text">
-        <h2 id="3.">
-          3. Results
-        </h2>
         <p>
-          Doing this repeatedly resulted in the same factors that affected LiDAR. Including more surface deformations to create contrasts had a major impact when performing photogrammetry. Since the software is completely reliant on images, any extrusions or indentations will enable the software to stitch a better 3D model. 
+          In seat belts, the force is transmitted through the belt onto the
+          locking mechanism which is attached to the car. When the lock is
+          activated, both the human and the object are connected to one singular
+          body. Now imagine that this mechanism is attached to the head and
+          connected to the body. Before the impact, we can use Newton’s second
+          law of motion for rotational bodies which can be represented as $$
+          \tau = I\alpha \tag{2} $$
         </p>
-        <h3 id="3.1">
-          3.1 Trino
-        </h3>
         <p>
-          Taking the data developed by the app, the models were imported to Netfabb to measure distances. Netfabb reduced the number of triangles imported, allowing for faster loading times and a speeder interface. The Trino app requires around 50 images and the photos were processed within 10 minutes of the upload. The diameter reading was disappointing as it still had a 15.90% error. The extrusion readings were much better with an error of 5.31%. This lower reading could have been because I used the calibration distance to be on of these features. Giving these details around the dome a higher accuracy reading than if I had used the diameter to scale the model. Any measurements displayed in <span style="color: #467f1f">green</span> are taken by hand by a caliper and measurements displayed in <span style="color:#f3ae15">orange</span> are measured on a computer. The 3D models can be controlled with the mouse and zoomed in with the scroll wheel.
+          Where &tau; is the torque, <i>I</i> is the rotational inertia, and
+          &alpha; is the angular acceleration. The angular acceleration is
+          unknown as impacts are unavoidable, hence this cannot be changed and
+          should be used as a given. Therefore, to reduce the total angular
+          acceleration on the head we must increase <i>I</i>. If the mechanism
+          performs correctly, then when an object hits the side of the face, the
+          lock should instantly stop the head from accelerating past a specific
+          value. This lock will be connected to the body and the total mass will
+          increase which will consequently increase <i>I</i>. To represent this
+          more clearly, first start with the torque introduced by the initial
+          impact. $$ \tau_{initial} = I_{initial}\alpha_{initial} \tag{3} $$
         </p>
-        <img class="researchimg2" src="../images/PhotogrammetryTrino1.png" alt="Trino Diameter Scan Results">
-        <figcaption class="caption">
-          Figure 1) <b>A</b> displays the real measurement from a caliper and <b>B</b> is the measured diameter from the Trino app. The error is 15.90%.
-          <hr>
-        </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryTrino2.png" alt="Trino Extruded Part Results">
-        <figcaption class="caption">
-          Figure 2) <b>A</b> represents the measurement of the extruded part and <b>B</b> is the Trino app distance. The error is 5.31%.
-          <hr>
-        </figcaption>
-        <model-viewer
-        class="center-fit"
-        src="../Obj/Trnio Dome.glb"
-        alt="3D model of the helmet"
-        camera-controls
-        auto-rotate
-      ></model-viewer>
-        <figcaption class="caption">
-        Model 1) Results of the photogrammetry model created by Trino.
-        <hr>
-      </figcaption>
-        <h3 id="3.2">
-          3.2 Meshroom
-        </h3>
+        <p>
+          To reduce angular acceleration we must add a larger I value as stated
+          above, we do this by introducing the rest of the body, not just the
+          head, to the equation because adding mass will result in a much higher
+          rotational inertia. The torque does not change because it was
+          initiated during impact and stays constant during the rotation of the
+          head. Hence, the above equation becomes as follows. $$ \tau_{initial}
+          = I_{final}\alpha_{final} \tag{3} $$ $$ \tau_{initial} = \tau_{final}
+          \rightarrow I_{initial}\alpha_{initial} = I_{final}\alpha_{final}
+          \tag{4} $$
+        </p>
+        <p>
+          For this equation to be true given that \(I_{final}>I_{initial}\),
+          then final must be smaller than \(\alpha_{initial}\). Thus reducing
+          the angular acceleration of the rotating body and preventing damaging
+          forces to the head and neck. If the force vector was pointing
+          perpendicular to the rotation, it will provide the most torque to
+          counteract the rotation due to the impact. A single wire was first
+          tested, then two to ensure that the wire will be sufficient to stop
+          rotation directions of impact.
+        </p>
+
+        <h2 id="2.">2. Methodology</h2>
         <div class="leftcontainer">
-            <div>
-            <img src="../images/PhotogrammetryMeshroom1.png" width="500px" alt="Meshroom Results">
-            <figcaption class="figcap">
-                Figure 3) Results of the photogrammetry model created by Meshroom. The error for the diameter is 12.89% and for the extrusions were 0.79%.
-                <hr>
+          <div>
+            <img
+              class="researchimg3"
+              src="../ImageFile/NewHelmet/SetupTopEdited.jpg"
+              alt="Top view of the impact path"
+            />
+            <figcaption class="caption">
+              Top view of the impact path for the experiment. The dummy was
+              mounted with all the components and the ball height at the end of
+              the pendulum was adjusted to impact the face at the same location.
+              <b>A</b> is the helmet with the sensors located in the back,
+              right, and left sides. <b>B</b> is the horizontal component that
+              extrudes out of the body to guide the wires perpendicular to the
+              impact force. <b>C</b> is the horizontal segment that connects the
+              part mentioned previously to the vertical component of the back
+              mount.
             </figcaption>
+          </div>
+        </div>
+        <p>
+          Proceeding to use a software helped the accuracy improve. Uploading
+          around 100 images to the software, it took around two hours to
+          process. However, the models came out to be more detailed than what
+          the app could produce. The diameter error was still in the range of
+          12.89%, which is still inaccurate for our standards. The extrusion
+          error was less than a percentage, coming around 0.79%. Again, this
+          could have been due to the fact that I use these smaller details to
+          scale the entire model to the appropriate size. There are no
+          limitations on how many images you can upload to the computer
+          software, hence, having more images will increase accuracy. This,
+          however, will increase the processing time considerably. 100 images
+          took around 2 hours and 300 images took around 3.5 hours.
+        </p>
+
+        <p>
+          As for any experiment, consistency is key when testing different
+          techniques during each trial. The dummy with just the torso and head
+          was placed at a marked location in the lab with proper orientation of
+          the lower body. Similarly, the head was rotated to a marked position.
+          The back strap was mounted and a dark background was used in order to
+          record footage of each test. A wire was hung from the ceiling to a
+          professional soccer ball at 12 PSI. The ball’s height was adjusted to
+          ensure that it would impact the head at the same location. The ball
+          was then lifted to a height of 1.765 m and released so that it would
+          follow the same path every single trial. Finally, a camera was placed
+          to record the event at 240 FPS. After the initial setup was completed,
+          the impact tests were conducted.
+        </p>
+
+        <p>
+          The purpose of this experiment was to test the feasibility of the
+          centripetal locking mechanism. Thus, to prove that the concept is
+          achievable and beneficial to a human, the tests done during this
+          semester were only with taut wires and the mechanism itself was not
+          tested.
+        </p>
+
+        <div class="leftcontainer">
+          <div>
+            <img
+              class="researchimg3"
+              src="../ImageFile/NewHelmet/FrontHead.jpg"
+              alt="Image taken from the front of the helmet"
+            />
+            <figcaption class="caption">
+              Image taken from the front of the helmet to illustrate how the
+              wire was guided to the back of the torso.
+            </figcaption>
+          </div>
+        </div>
+
+        <p>
+          Three tests were performed. Firstly, a control experiment had to be
+          established as it provided the means for comparison on the upper and
+          lower levels of how effective the invention was at reducing angular
+          acceleration. The dummy was exposed to a blunt impact without any
+          constraints from the back mount. This was considered the maximum
+          acceleration during this experiment. Next, a single wire was attached
+          to the side where the impact occurred. The wire was attached to the
+          side of the helmet and guided towards the back of the mount where it
+          was kept taut. Then two wires were placed opposing one another. The
+          accelerometer readings were recorded using Blue Trident Sensors. Two
+          sensors were located on the right and left side of the head, and one
+          was located in the back. With this layout, the data could be evaluated
+          for the two largest rotation vectors for the head. Additionally, the
+          two sensors on both sides of the face served to compare and mitigate
+          the errors arising from the accelerometer being close to the impact.
+          This causes extra noise that could sway the results to a higher or
+          lower value than what was actually observed. This is a similar
+          approach to gathering the data just as the one discussed in (REF). The
+          data was downloaded at both 1600 Hz for the raw linear acceleration
+          and at 1125 Hz for the angular velocity.
+        </p>
+        <div class="clear"></div>
+
+        <h2 id="3.">3. Design</h2>
+        <p>
+          The prototyping and manufacturing of the parts were all created from
+          scratch except for the helmet with the sensor housings. The helmet was
+          created by Yang Wang, and some minor adjustments were made to create
+          mounting holes for the wires to be placed. The main project of the
+          research was to design and reengineer a centripetal locking mechanism.
+          The second focus was to validate the theory that would prove that this
+          device would be effective in reducing angular acceleration. All 3D
+          printed parts were created in Solidworks© and printed using Prusa
+          MK3S+ printers with PLA plastic (0.4 mm nozzle). Most of the parts
+          were created with 15% infill to speed up the manufacturing process.
+          Everything created was built around a human-centered design as one day
+          a person would wear this device. Additionally, large parts had to be
+          manufactured using a 20 cm by 20 cm printing area, so unique designs
+          that revolved around part attachments had to be considered. Every
+          piece was designed so that it could be adjustable if a different
+          height, length, etc. was required without the need to print an
+          entirely new part.
+        </p>
+
+        <h3 id="3.1">3.1 Back Mount</h3>
+        <div class="leftcontainer">
+          <div>
+            <img
+              class="researchimg3"
+              src="../ImageFile/NewHelmet/SetupBackEdited.jpg"
+              alt="Back view of the mounting area with wires attached"
+            />
+            <figcaption class="caption">
+              Back mounting plate and wire guidance of the system. <b>A</b>,
+              <b>B</b>, and <b>C</b> are represented in a different angle from
+              the one shown in the figure above. <b>D</b> is the horizontal
+              extension built for the main plate that is strapped around the
+              body. <b>E</b> is the main plate with 1 in webbing wrapped around
+              the body.
+            </figcaption>
+          </div>
+        </div>
+        <p>
+          In order to increase I, the forces have to transmit to the entire
+          body. Therefore, a back mounting area was required in order to attach
+          the arms of the wire guides and the centripetal locking mechanism. A
+          rough outline of a person’s spinal path was taken and the plate with
+          mounting holes was designed. Using 1/4 20 bolts as a default, cuts of
+          the head were created so that the bolts would be flush on a person’s
+          back, creating more comfort. Moreover, there were 1 in holes for the
+          webbing to go through. This webbing would be crucial in keeping the
+          system stationary during impact. Inspiration for the webbing design
+          was taken from online sources such as the figure above. The webbing
+          had two cross sections horizontally to keep it stationary from
+          rotational movement and one vertical piece on each shoulder for height
+          stability. There was a larger vertical section that increased the
+          height of the plate so that another horizontal component could be
+          attached. Finally, a segment that was pointing towards the front of
+          the body was created. This rested slightly above the shoulders of the
+          dummy and it provided the necessary holes so that the forces could be
+          directed perpendicular from the head to the lower back.
+        </p>
+        <div class="clear"></div>
+
+        <div class="reset">
+          <div class="row">
+            <div class="column">
+              <model-viewer
+                class="model"
+                src="../Obj/Fall/Entire Back.glb"
+                alt="3D model of the helmet"
+                camera-controls
+                auto-rotate
+              ></model-viewer>
+              <figcaption class="modelcaption">
+                Back mounting area created to hold bolts flush against the back
+                and pass webbing through the holes to keep the entire system
+                fixed as one body.
+              </figcaption>
             </div>
+            <div class="column">
+              <model-viewer
+                class="model"
+                src="../Obj/Fall/Vertical.glb"
+                alt="3D model of the helmet"
+                camera-controls
+                auto-rotate
+              ></model-viewer>
+              <figcaption class="modelcaption">
+                Additional large vertical section to mount to the back mount to
+                extend the mounting holes further up the back.
+              </figcaption>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <model-viewer
+                src="../Obj/Fall/HorizontalPart.glb"
+                alt="3D model of the helmet"
+                camera-controls
+                auto-rotate
+              ></model-viewer>
+              <figcaption class="modelcaption">
+                The horizontal component that attached the shoulder segements
+                that extruded out of the body.
+              </figcaption>
+            </div>
+            <div class="column">
+              <model-viewer
+                src="../Obj/Fall/Shoulders.glb"
+                alt="3D model of the helmet"
+                camera-controls
+                auto-rotate
+              ></model-viewer>
+              <figcaption class="modelcaption">
+                The part that extruded out of the back mount towards the face.
+                This guided the wires perpendicular to the impact force,
+                providing the greatest amount of reaction torque to stop the
+                head from accelerating.
+              </figcaption>
+            </div>
+          </div>
         </div>
-            <p>
-            Proceeding to use a software helped the accuracy improve. Uploading around 100 images to the software, it took around two hours to process. However, the models came out to be more detailed than what the app could produce. The diameter error was still in the range of 12.89%, which is still inaccurate for our standards. The extrusion error was less than a percentage, coming around 0.79%. Again, this could have been due to the fact that I use these smaller details to scale the entire model to the appropriate size. There are no limitations on how many images you can upload to the computer software, hence, having more images will increase accuracy. This, however, will increase the processing time considerably. 100 images took around 2 hours and 300 images took around 3.5 hours.
-            </p>
-                <div class="clear">
-                    <model-viewer
-                    class="center-fit"
-                    src="../Obj/mesh (6).glb"
-                    alt="3D model of the helmet"
-                    camera-controls
-                    auto-rotate
-                ></model-viewer>
-                    <figcaption class="caption">
-                    Model 2) 3D interactive model for the model created by Meshroom. Note that the inside of the model could not be reconstructed.
-                    <hr>
-                </figcaption>
-                </div>
+
+        <h3 id="3.2">3.2 Centripetal Lock</h3>
+        <p>
+          Another focus of this research was to create the centripetal locking
+          system. Inspiration was first taken from a youtube video of a person
+          dismantling one of the seat belt mechanisms. The very first idea was
+          to create a part that would move tangentially to the force that was
+          being applied just as the video describes. Gear teeth were created
+          within a case alongside some other parts including the actual lock,
+          rod, upper casing, and friction-reducing plate. The friction reducer
+          referred to here is a small plate that sat between the lock and the
+          casing. This plate had less surface area; hence, kinetic friction
+          would be reduced and the lock would be more sensitive to acceleration.
+          However, with the first prototype, the lock did not move tangentially
+          and did not activate at all. Even with adjusting the size of the lock
+          to be more front-heavy and relocating the center of mass towards the
+          edge of the lock, it was still not sufficient for the forces to act
+          tangentially in the (theta hat) direction. Since centripetal force is
+          given by $$ F = {mv^2 \over r} \mathbf{\hat{r}} \tag{5} $$
+        </p>
+
+        <p>
+          The arms of the device had to be constrained to move in the \(
+          \mathbf{\hat{r}} \) direction. The arms of the lock broke off due to
+          rotational testing of the gear shapes and the indents of the arms are
+          visible clearly in the pictures below.
+        </p>
+
+        <img
+          class="researchimg3"
+          src="../ImageFile/NewHelmet/V1Image.jpg"
+          alt="First centripetal locking mechanism design"
+        />
+        <figcaption class="caption">
+          First design of the centripetal locking mechanism. The design was made
+          for the lock to move tangentially to the force. <b>A</b> is the
+          interal parts of the mechanism. Notice that the two locks had arms
+          broken off due to fatigue and stress. This failure point is marked in
+          <span style="color: #00ff51">Green</span>. The color
+          <span style="color: #ed1c24">Red</span> represents the rotational
+          motion of the mechanism and
+          <span style="color: #0000ff">Blue</span> represents the reaction of
+          the lock. As displayed above, the lock would rotate in a clockwise
+          direction, this would cause radial forces to occur. However, the
+          sliding pin joint (blue arrow) was restricted to the tangential
+          vector. Hence, there was not a sufficient amount of force in the
+          tangential direction and the lock would not operate as intended.
+        </figcaption>
+
+        <p>
+          The second prototype was created given version, V1. This was the first
+          real assembled part with an increased arm radius of 2 mm from 1.25 mm.
+          Axial stresses are given by the equation $$ \sigma_x = {My \over I}
+          \tag{6} $$ where <i>I</i> is the moment of inertia of the
+          cross-section of the shape, <i>M</i> is the maximum moment induced,
+          and <i>y</i> is the distance from the neutral plane to a point on the
+          cross section. For this example, <i>y</i> is the radius of the arm
+          since it accounts for the highest amount of stress in the part. For a
+          circle, I is \({\pi \over 4} C^4 \) where C is the radius of the
+          cross-section. Increasing the radius by 0.75 mm decreased the original
+          stress by roughly 75.59% this is because there is a decrease to the
+          fourth power as you increase the radius.
+        </p>
+
+        <p>
+          Moreover, more teeth were included so that the lock would activate at
+          a faster rate. This did not work as adding more teeth toward the edges
+          of the lock would create torque in the system. During impact, the
+          teeth would slide out as expected and the two arms would move radially
+          outward. However, as the upper housing kept turning clockwise, the
+          right arm would be forced to account for the reaction forces created
+          by the force vector arising from the casing teeth impacting the lock.
+          Thus, it turned into a pin joint which allowed for rotation. The
+          location of the rotation axis would be adjusted. This would create a
+          moment on the left arm of the lock and push it counterclockwise,
+          releasing it from its locked position entirely. In attempting to solve
+          this problem in the second model, the number of teeth was reduced, but
+          the original problem still existed.
+        </p>
+
+        <img
+          class="researchimg3"
+          src="../ImageFile/NewHelmet/V2Image.jpg"
+          alt="First working prototype of the centripetal locking mechanism"
+        />
+        <figcaption class="caption">
+          <b>A</b> illustrates the rotation of the upper casing and how it
+          guides the arms outward in the radial direction. <b>B</b> is after the
+          mechanism has been locked into place. The right arm provides rotation
+          for the lock as the forces from the casing rotate counterclockwise.
+          <span style="color: #ed1c24">Red</span> represents the rotational
+          motion of the mechanism,
+          <span style="color: #0000ff">Blue</span> represents the reaction of
+          the lock, and <span style="color: #ff0af4">Pink</span> represents the
+          reaction force vector that occurs when the lock impacts the casing
+          teeth.
+        </figcaption>
+
+        <div class="leftcontainer">
+          <div>
+            <img
+              class="researchimg3"
+              src="../ImageFile/NewHelmet/VFinalImage.jpg"
+              alt="Final design of the locking mechanism"
+            />
+            <figcaption class="caption">
+              New design of the lock with the upper casing guiding it radially
+              outward and locking into the teeth with a perfect fit.
+              <span style="color: #ed1c24">Red</span> represents the rotational
+              motion of the mechanism,
+              <span style="color: #0000ff">Blue</span> represents the reaction
+              of the lock, and
+              <span style="color: #ff0af4">Pink</span> represents the reaction
+              force vector that occurs when the lock impacts the casing teeth.
+              Inspecting the figure, the pin joint has been contrained to the
+              left side which will cause rotation of the lock only in the
+              counterclockwise direction. The
+            </figcaption>
+          </div>
         </div>
-      <div class="info-text">
-        <h2 id="4.">
-          4. Issues Related To Photogrammetry
-        </h2>
+
         <p>
-          The 3D model that was outputted by the software was accurate for our needs. The downsides of photogrammetry are as follows:
-          <ol>
-            <li>
-              There is no scaling factor associated with the model. The software has no idea how to scale the object to real dimensions because it is not given that data and there is no place to input it. 
-            </li>
-            <br>
-            <li>
-              You cannot stitch the backside of the object as rendering the backside will require the movement of the object. This will change the orientation and background, which the softwarre uses to find appropriate distances from feautre to feature. This makes it impossible for the software to stitch the entire object in one render. One method is to render two sides separately and then combine them on a separate application later on.
-            </li>
-            <br>
-            <li>
-              The lighting is crucial and any harsh reflection or shadow will make the software crash.
-            </li>
-        </ol>
+          The solution was to force the desired arm to be a pin joint. This
+          prevented that segment from moving down and solely provided rotation
+          to the rest of the lock. The forces from the casing teeth provide
+          external torque that pushes the lock counterclockwise which resists
+          the movement of the rod which is moving clockwise. Version six was the
+          first successful implementation of the centripetal locking mechanism.
+          Additional changes included the removal of some wings on the plate and
+          adding a hex pattern on the rod and upper casing. This hex pattern
+          created a rod that could be pressure fitted, so that glue or tools
+          were not required to assemble and disassemble the system. This made it
+          possible to prototype many minor modifications of the lock.
         </p>
-      </div>
-      <div class="info-text">
-        <h2 id="5.">
-          5. Changing Methodology
-        </h2>
+
         <p>
-          Taking it one step further to resolve problems 2 and 3, a stage was created. This stage is composed of black material that is absorbent to any light source. This black flock material absorbs 99% of light at certain angles, making it impossible for a camera to pick up. Darker material might help seperate the object from the background, however, it also makes dust particles more visible which can make the photogrammetry software crash. It is important to keep any particles away from the black material. The proposed plan was to take pictures of the object on a black stand and background so that the software is only able to replicate the lit areas. All the lights in the room were turned off and this eliminated any additional light reflection from surfaces around the test piece. This gave the software the illusion that the object was floating in space. The model could be recreated on all sides and this helped the accuracy improve drastically. 
-          <br>
-            <p>polarization was also used. Cross polarization is a method in which linear polarized light is filtered by a circular polarizer. To create this, I made a frame with a square hole in order to fit a DSLR or iPhone camera in the middle. The design consisted of a linear polarizer in front of led strips that were soldered together in a loop. The arms of the frame are attached to tosional hinges in order to hold the arms stationary at a desired angle. The design goal was to create something with high flexability to accomodate any surfaces that might need to get scanned in the future. Using this light source alongside a circular polarizer on the camera lense, the surface highlights and shadows were completely removed. Cross-polarizing the light yielded the best and most accurate images that I could have acquired. Since the light removed any shadows, I could pause the photo imaging process and flip the object, then resume the same process as before.
-            </p>
-           </p>
-           <img class="researchimg2" src="../images/PhotogrammetrySetup.png" alt="Cross Polarizing Setup">
-           <figcaption class="caption">
-             Figure 4) Left image displays a custom linear polarzing light emitter with angles adjustable from 0 to 180 degrees. The right  image is the view from the square cut-out. This was made to take pictures of an object with dark background that absorbes 100% of light during a photoshoot. 
-             <hr>
-           </figcaption>
-      </div>
-      <div class="info-text">
-        <h2 id="6.">
-          6. New Results
-        </h2>
-        <h3 id="6.1">
-          6.1 Cross Polarized Meshroom
-        </h3>
-        <p>
-          The models that were reconstructed from the images taken from the new setup were incredibly accurate. The diameter reading had an error of 1.71% which equates to a 1.36 mm difference. These were by far the best results that were acquired from the test. The distances between extruded parts were 1.45% which is a 0.16 mm difference. 
-          The second figure below shows a software error that was introduced due to the dust particles on the stage. Though the model is represented poorly, the distances themselves are accurate. Measuring the diameter, the error was only 0.20% which is a 0.16 mm difference and the extruded parts had a 3.42% error, only a 0.40 mm difference. This result could be replicated for any object, not just the test piece. Since cross polarization eliminates reflections, black materials cannot be scanned using this method. If we put a helmet on top of this stand and take around 250 images, we can reliably say that the distances measured in the software will be accurate for our needs.
+          The moment the arm issue was fixed, however, problems arose as the
+          gear teeth shape had to be readjusted. During impact, the lock would
+          stop the rod from rotating, but the lock would not be fully
+          encapsulated in the gear cut. This was the reaction due to the normal
+          forces acting normally on the contact surface. This normal vector was
+          pointing closer to the center of rotation rather than the tangential
+          vector. When the force and distance vector is perpendicular, this will
+          yield the highest amount of rotation within the system. It was
+          desirable to adjust the very tips of the teeth on the lock. Having a
+          flatter approach rather than a curved one was beneficial in directing
+          the force vector tangentially to create more torque.
         </p>
-        <img src="../images/CrossPolarization.png" alt="Cross Polarized Images">
-        <figcaption class="caption">
-          Figure 5) <b>A</b> displays the type of images I was using before. <b>B</b> are images from polarizing the light, hence any harsh shadows are removed. <b>C</b> is an image captured by cross polarizing the light.
-          <hr>
-        </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryMeshroom2.png" alt="">
-        <figcaption class="caption">
-          Figure 6) <b>A</b> are the diameter readings from the images gathered from cross polarization and the errro was 1.71% <b>B</b> represents a measurement taken of a finer detail of the model, between extruded cubes. The error for this was 1.45%.
-          <hr>
-        </figcaption>
-        <model-viewer
-            class="center-fit"
-            src="../Obj/Test7Cleaned(S)(Meshmixer).glb"
-            alt="3D model of the helmet"
-            camera-controls
-            auto-rotate
-          ></model-viewer>
-          <figcaption class="caption">
-            Model 3) A more detailed model reconstruction created from cross polarization and darker background.
-            <hr>
-          </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryMeshroom3.png" alt="">
-        <figcaption class="caption">
-          Figure 7) Models reconstructed in Meshroom with artifacts and noise in the images. Even with the extraneous parts, <b>A</b> had an error of 0.20% for the diameter, and <b>B</b> had an error of 3.42% for the extruded part. Still, the difference is &lt; 0.50mm. This is the most accurate model that has been created.
-          <hr>
-        </figcaption>
-        <h3 id="6.2">
-          6.2 Reality Capture
-        </h3>
+        <div class="clear"></div>
         <p>
-          We can replicate sub-millimeter accuracy in a lab, but what about in the field and in the real world where you might not have access to these materials? This is where a more advanced software is utilized. Reality Capture is a pay-by-model software where the settings are more customizable to the user. For example, up to this point, I have been using some known distance or size of the object in order to scale the entire piece. However, using this software, I can set the distances automatically, which allows for even greater accuracy. Moving on from the test piece, I wanted to try the helmet on a fake model. The model was set up on the plane wood stage with infrared markers. Once around 200 images were taken with a regular iPhone, the images were uploaded to the computer. Though the preprocessing settings took longer than Meshroom, the results were better. Measuring multiple distances and features on the helmet itself, the results are surprising. The sensor housing had an error of 1.57% which is a difference of 0.53 mm. The strap size error was around 2.62% which is a difference of 0.64 mm. Lastly, the frame segment had the lowest error of 0.78% which is only 0.29 mm!
+          The final adjustments to the mechanism were first adding a spring to
+          unlock the system after the impact had passed. Instead of a
+          conventional metal spring, a rubber band was used. This provided more
+          adjustability as the pretension could be tuned for the desired level
+          of force to radially pull back the lock. Adding a threaded screw so
+          that the rubber band can be tied around it allowed for sensitivity
+          adjustment. Tightening the screw and consequently adding more tension
+          to the rubber band would increase the acceleration at which the lock
+          would activate. Conversely, loosening the rubber band would allow it
+          to be more sensitive. This final version of the locking mechanism was
+          achieved after 13 iterations and adjustments.
         </p>
-        <img class="researchimg2" src="../images/PhotogrammetryReality1.png" alt="">
+        <img
+          class="researchimg3"
+          src="../ImageFile/NewHelmet/LockIterations.jpg"
+          alt="Iterations of the lock and design progress"
+        />
         <figcaption class="caption">
-          Figure 8) Sensor housing error of 1.57%
-          <hr>
+          Layout of the most significant design changes. The first row
+          represents the upper casing which guides the arms toward the teeth of
+          the casing. The second row is the friction-reducing plate while the
+          third row is the actual casing. The fourth row is the lock design that
+          moves radially outward when introduced to rotation. The last row
+          contains the entire mechanism assembled into one component.
         </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryReality2.png" alt="">
-        <figcaption class="caption">
-          Figure 9) Strap width error of 2.62%
-          <hr>
-        </figcaption>
-        <img class="researchimg2" src="../images/PhotogrammetryReality3.png" alt="">
-        <figcaption class="caption">
-          Figure 10) Frame segment error of 0.78%
-          <hr>
-        </figcaption>
-        <div class="imgbox">
-          <model-viewer
-            class="center-fit"
-            src="../Obj/HeadTest2Cleaned.glb"
-            alt="3D model of the helmet"
-            camera-controls
-            auto-rotate
-          ></model-viewer>
-          <figcaption class="caption">
-            Model 4) The most detailed and accurate photogrammetry model reconstruction of the helmet without the need of special equipment.
-            <hr>
-          </figcaption>
+
+        <h2 id="4.">4. Results</h2>
+        <p>
+          The project consisted of testing the theory of the centripetal locking
+          mechanism. The data gathered from the impact tests are listed below.
+          The magnitudes of linear acceleration and angular velocity were
+          calculated using standard methods. $$ \overrightarrow{a} = \sqrt{a_x^2
+          + a_y^2 + a_z^2} \quad \text{and} \quad \overrightarrow{\omega} =
+          \sqrt{\omega_x^2 + \omega_y^2 + \omega_z^2} \tag{7} $$ The following
+          figures display what the raw data output looks like for all sensors.
+        </p>
+
+        <div>
+          <div class="row">
+            <div class="column">
+              <img
+                src="../ImageFile/NewHelmet/Sensor1.png"
+                alt="Angular velocity components of one sensor"
+              />
+              <figcaption class="caption">
+                The components of the x, y, and z for one sensor of angular
+                velocity.
+              </figcaption>
+            </div>
+
+            <div class="column">
+              <img
+                src="../ImageFile/NewHelmet/Sensor1Mag.png"
+                alt="Angular velocity components of one sensor"
+              />
+              <figcaption class="caption">
+                The magnitude of angular velocity for one sensor.
+              </figcaption>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <img
+                src="../ImageFile/NewHelmet/ControlLinearAccelComp.png"
+                alt="Linear acceleration components of one sensor"
+              />
+              <figcaption class="caption">
+                The components of the x, y, and z for one sensor of linear
+                acceleration.
+              </figcaption>
+            </div>
+            <div class="column">
+              <img
+                src="../ImageFile/NewHelmet/ControlLinearAccelMag.png"
+                alt="Linear acceleration magnitude of one sensor"
+              />
+              <figcaption class="caption">
+                The magnitude of linear acceleration for one sensor.
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Upon inspection, the data from each sensor sufficiently correlate
+          during the trials. Thus, it ensures that the data gathered from the
+          side of the impact in relation to the other sensors are still valid to
+          use in the analysis. There was minimal noise in the data, as any
+          spikes would have been noticed by the figure representations.
+          Extracting the x, y, and z components of angular velocity from the
+          sensors make it easier to analyze the data and affirm correlation.
+          Gathering the magnitude and then computing the maximum values from
+          each sensor, the data can be compiled into Tables 1-8, as shown below.
+        </p>
+
+        <div class="test">
+          <div class="row">
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Angular Velocities For Control Experiment
+                  \((rad/s\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>17.87</td>
+                  <td>17.58</td>
+                  <td>16.76</td>
+                  <td>17.40</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>16.87</td>
+                  <td>16.65</td>
+                  <td>16.83</td>
+                  <td>17.20</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>17.83</td>
+                  <td>16.85</td>
+                  <td>16.91</td>
+                  <td>17.20</td>
+                </tr>
+              </table>
+            </div>
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Angular Velocities For Single Wire
+                  Experiment \((rad/s\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>17.62</td>
+                  <td>17.31</td>
+                  <td>16.67</td>
+                  <td>17.20</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>15.21</td>
+                  <td>25.07</td>
+                  <td>15.78</td>
+                  <td>18.69</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>15.38</td>
+                  <td>16.22</td>
+                  <td>15.49</td>
+                  <td>15.69</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Angular Velocities For Double Wire
+                  Experiment \((rad/s\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>14.10</td>
+                  <td>14.53</td>
+                  <td>14.87</td>
+                  <td>14.50</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>15.61</td>
+                  <td>15.50</td>
+                  <td>15.71</td>
+                  <td>15.61</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>13.46</td>
+                  <td>13.94</td>
+                  <td>14.33</td>
+                  <td>13.91</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Angular Velocities For Totally Contrained
+                  Experiment \((rad/s\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>8.76</td>
+                  <td>10.12</td>
+                  <td>8.63</td>
+                  <td>9.17</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>8.11</td>
+                  <td>9.71</td>
+                  <td>8.65</td>
+                  <td>8.82</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>8.81</td>
+                  <td>10.01</td>
+                  <td>8.83</td>
+                  <td>9.22</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Linear Acceleration For Control
+                  Experiment \((m/s^2\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>302.48</td>
+                  <td>296.27</td>
+                  <td>484.76</td>
+                  <td>361.17</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>232.39</td>
+                  <td>276.20</td>
+                  <td>493.32</td>
+                  <td>364.30</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>254.33</td>
+                  <td>277.30</td>
+                  <td>495.84</td>
+                  <td>342.49</td>
+                </tr>
+              </table>
+            </div>
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Linear Acceleration For Single Wire
+                  Experiment \((m/s^2\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>270.63</td>
+                  <td>254.72</td>
+                  <td>509.07</td>
+                  <td>344.81</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>705.85</td>
+                  <td>312.79</td>
+                  <td>604.70</td>
+                  <td>541.11</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>413.82</td>
+                  <td>229.67</td>
+                  <td>487.10</td>
+                  <td>376.63</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Linear Acceleration For Double Wire
+                  Experiment \((m/s^2\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>298.07</td>
+                  <td>241.42</td>
+                  <td>493.87</td>
+                  <td>344.45</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>336.92</td>
+                  <td>180.13</td>
+                  <td>424.73</td>
+                  <td>313.93</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>320.38</td>
+                  <td>160.50</td>
+                  <td>388.87</td>
+                  <td>289.92</td>
+                </tr>
+              </table>
+            </div>
+            <div class="column">
+              <table>
+                <caption class="tablecap">
+                  Maximum Magnitude Of Linear Acceleration For Totally
+                  Contrained Experiment \((m/s^2\))
+                </caption>
+                <tr>
+                  <th>Trial</th>
+                  <th>Sensor 1</th>
+                  <th>Sensor 2</th>
+                  <th>Sensor 3</th>
+                  <th>Average</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>293.68</td>
+                  <td>194.22</td>
+                  <td>410.23</td>
+                  <td>299.37</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>268.95</td>
+                  <td>199.13</td>
+                  <td>347.76</td>
+                  <td>271.95</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>271.85</td>
+                  <td>204.28</td>
+                  <td>340.33</td>
+                  <td>272.15</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="5.">5. Discussion</h2>
+
+        <div class="leftcontainer">
+          <div>
+            <video
+              src="../ImageFile/NewHelmet/OneWire.mov"
+              controls
+              muted
+            ></video>
+            <figcaption class="videocaption">
+              Video above shows the impact caused by the soccer ball with one
+              wire attached. Inspecting the video, you can clearly see that
+              after the impact, the head is subjected to backlash due to the
+              single wire.
+            </figcaption>
+          </div>
+        </div>
+
+        <p>
+          Gathering data from three locations on the head and extracting the
+          angular velocity and linear acceleration, the data supports the idea
+          of a centripetal locking mechanism. Firstly, the angular velocity of
+          the control trials was theorized to have the highest values as it had
+          the least number of forces attempting to stop the impact from
+          increasing the velocity. This was not true, as the single wire
+          attached to the head achieved the highest angular velocity. This was
+          surprising as it should have reduced the angular velocity due to the
+          perpendicular force preventing it from rotating. The issue became
+          apparent when inspecting the video after the impact, as it created a
+          moment on the head and pulled it back at an accelerated rate. This
+          contributed to a higher impulse and, consequently, a higher velocity
+          and acceleration reading. The linear acceleration readings were also
+          higher than the control and inconsistent from trial to trial. This is
+          specifically due to the fact that the single wire did not maneuver the
+          head in the same path every trial. Hence the acceleration readings
+          varied depending on how the head rotated back due to whiplash.
+        </p>
+
+        <div class="leftcontainer">
+          <div>
+            <video
+              src="../ImageFile/NewHelmet/TwoWire.mov"
+              controls
+              muted
+            ></video>
+            <figcaption class="videocaption">
+              Video above shows the impact caused by the soccer ball with two
+              wires. After impact, the head rotates in the same plane where it
+              was initially placed. This eradicated any problems that arose from
+              the test done with one wire, i.e. backlash and redireciton of the
+              head.
+            </figcaption>
+          </div>
+        </div>
+
+        <p>
+          The two wires did much better in reducing the angular velocity as they
+          had the ability to stabilize the head in both directions by
+          eliminating any possibility of the head moving towards the chest or
+          back. The second wire was theoretically able to absorb half of the
+          force presented by the ball during impact. When taking the average
+          angular velocity during the control trials and comparing them to the
+          averages obtained from the double wire impacts, there is a noticeable
+          decrease in values. The angular velocity average for the control trial
+          was 17.13 rad/s, while the double wire trials averaged out to be 14.30
+          rad/s. This was a reduction of 18.00%, which is amazing considering
+          that this could theoretically be the difference between a minor or
+          major concussion, depending on the impact. This, however, is still
+          significantly off from the theoretical minimum of 9.07 rad/s, which is
+          almost another 42.94% difference.
+        </p>
+        <p>
+          That being said, the acceleration results were more prominent in
+          indicating the acceleration forces on the head during impact. The
+          control experiment had an average linear acceleration of 355.99 m/s^2,
+          while the double wire had a value of 316.10 m/s^2, which is an 11.87%
+          decrease. This measurement is more valuable because force can be
+          directly calculated using these values. The absolute minimum
+          acceleration was calculated to be around 281.16 m/s^2. The completely
+          constrained experiment is only an 11.70% improvement from the ones
+          conducted with two wires. The idea of having a single wire must be
+          eradicated as it would result in larger acceleration and an increased
+          neck strain. Hence, a mechanism that simultaneously stops both wires
+          during impact must be developed to reduce the risk of further damage
+          to the head and neck. Though angular acceleration was not computed due
+          to the rotation vector constantly changing through time and space, the
+          peak acceleration gathered from the data is sufficient to indicate
+          whether or not the mechanism was able to reduce linear acceleration.
+          Since angular and linear acceleration are related by a factor of
+          radius, it is fair to assume that this decreased angular acceleration
+          by the same factor.
+        </p>
+
+        <div class="clear"></div>
+
+        <div class="row">
+          <div class="column">
+            <div>
+              <video
+                src="../ImageFile/NewHelmet/NoWire.mov"
+                controls
+                muted
+              ></video>
+              <figcaption class="videocaption">
+                Video above shows the impact caused by the soccer ball with no
+                wires attached. This was considered the control experiment.
+              </figcaption>
+            </div>
+          </div>
+
+          <div class="column">
+            <div>
+              <video
+                src="../ImageFile/NewHelmet/Contrained.mov"
+                controls
+                muted
+              ></video>
+              <figcaption class="videocaption">
+                Video above shows the impact caused by the soccer ball while the
+                head was completely contrained. The head was restricted and
+                unable to rotate.
+              </figcaption>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="6.">6. Future Improvements</h2>
+        <p>
+          The next steps moving forward would be to first connect a proper wire
+          or threaded string to the centripetal locking mechanism. As stated
+          above, the steel wiring has the lowest elongation; however, the memory
+          of steel made it impossible to wrap it around the eight-millimeter
+          shaft for rotation. A possible solution would be to use kevlar as it
+          has similar strength and lower weight, but a higher elongation during
+          stress testing (Horn et al. 1977). This should not be important during
+          the material selection as the force being loaded onto the wire is
+          negligible. Furthermore, pre-tensioning the power spring to the proper
+          torque so that it eliminates any slack on the line is mandatory.
+          Finally, the centripetal lock will be integrated into the back, and
+          further impact tests will be conducted.
+        </p>
+        <p>
+          During the testing process, multiple flaws arose that could be
+          problematic if someone were to wear it. The weight of the entire
+          system was concerning as it can be quite heavy for someone to wear. If
+          the previous adjustments yield promising results just as before, then
+          progress towards making the locking mechanism and entire back mounting
+          area could be sized down. The purpose of making everything thicker and
+          larger was to test the theory and have enough margins to adjust the
+          equipment due to tolerances and material deformations. Moreover, the
+          mechanism will have to be attached to a gear system so that one
+          centripetal lock can control both wires so that they can be stopped
+          together and prevent any whiplash from occurring.
+        </p>
+        <p>
+          Additionally, this system is only designed for side impacts and is not
+          suitable for projectiles impacting the front or back of the head. The
+          development of a better system will also be designed for a dummy with
+          all body parts attached as it would represent a real human being. This
+          would also reduce the angular acceleration even more as it would
+          introduce more mass into the system.
+        </p>
+        <p>
+          Testing at what acceleration would the lock activate would also be
+          valuable information. Tuning the lock to actuate at a desired angular
+          acceleration would prevent the lock from acuating too soon or too
+          late. This can also be fine-tuned when more research about the angular
+          acceleration of the head is published and more modifications can be
+          made to the design.
+        </p>
+        <p>
+          Lastly, this device is not friendly for a human to wear, hence, parts
+          will have to be shrunk and materials will have to be lighter. The
+          implementation of the perpendicular force vector without the wire
+          guides extruding away from the body will be difficult, but not
+          impossible. The wire can be put into sleeves and guided down the neck
+          to the shoulders where it will be guided toward the locking mechanism.
+        </p>
+
+        <h2 id="7.">7. Conclusion</h2>
+        <p>
+          The entirety of the project is to transmit forces that would cause
+          rotational energy from the head to the body. The centripetal locking
+          mechanism was designed successfully and will be implemented in the
+          back mount during later testing. To test the theory, one and two wires
+          were attached to the helmet, perpendicular to the impact. This was to
+          simulate the lock activating and creating tension through the wires.
+          The results validate that a locking system can be utilized to decrease
+          angular acceleration during side impacts. With the success of creating
+          the lock and validating the theory, more experiments can be conducted
+          to completely integrate the two projects together. Applications that
+          could utilize this method of protection would be military exercises or
+          during athletic play. It allows for full head mobility while still
+          offering protection against strain and helps save people from
+          long-term brain injuries when implemented properly.
+        </p>
+
+        <div class="center-text">
+          <a class="link1" href="#top">Back to top</a>
         </div>
       </div>
-      <div class="info-text">
-        <h2 id="7.">
-          7. Conclusion
-        </h2>
-        <p>
-          We were able to acquire the submillimeter accuracy in the lab and even close to sub-half millimeter accuracy without any special equipment. The applications of these finds are endless as many have created 3D models of microorganisms or entire houses using this photogrammetry technique. What we proved here is that photogrammetry can match, if not do better, than advanced LiDAR systems that cost upwards of 10s of thousands of dollars. We were able to get an accuracy of &lt;1.00 mm and to the point where the thickness of the paper could be differentiated from the model. Plus, the sizing requirements of LiDAR do not limit modern photogrammetry techniques. Photogrammetry can allow anyone to create 3D models for free. With a better setup and software, these models can get even more detailed and accurate.
-        </p>
-      </div>
-      <div class="center-text">
-        <a class="link1" href="#top">Back to top</a>
-      </div>
-    </div>
     </main>
   </body>
 </html>

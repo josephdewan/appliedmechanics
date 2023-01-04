@@ -1,9 +1,3 @@
-model-viewer {
-  width: 400pt;
-  height: 400pt;
-  margin: 10, auto;
-}
-
 html {
   margin-left: 5%;
   margin-right: 5%;
@@ -13,8 +7,12 @@ html {
 
 body {
   margin: 0pt;
-  padding-bottom: 300pt;
+  padding-bottom: 20%;
   line-height: 1.5;
+  counter-reset: videos;
+}
+
+main {
   counter-reset: figures;
 }
 
@@ -23,7 +21,14 @@ body {
   height: 100%;
 }
 
+model-viewer {
+  max-width: 100%;
+}
+
 .center-fit {
+  width: 400pt;
+  height: 400pt;
+  margin: 10, auto;
   max-width: 100%;
   max-height: 100vh;
   margin: auto;
@@ -41,14 +46,13 @@ body {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+/*
 .vl {
   border-left: 3px solid black;
   height: 20px;
   margin-right: 10pt;
 }
-.leftMargin {
-  margin-left: 5pt;
-}
+*/
 
 .container {
   width: 100%;
@@ -63,8 +67,8 @@ body {
 }
 
 .JDheader {
-  margin-bottom: -10pt;
-  margin-top: -13px;
+  margin-bottom: -10px;
+  margin-top: -20px;
   font-size: 20pt;
 }
 
@@ -90,13 +94,6 @@ a {
   color: black;
 }
 
-.caption {
-  text-align: center;
-  color: grey;
-  margin-top: 3pt;
-  margin-bottom: 20pt;
-}
-
 p {
   text-indent: 25pt;
 }
@@ -116,7 +113,14 @@ h3 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 750pt;
+  width: 100%;
+}
+
+.researchimg3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
 }
 
 .linkedimg {
@@ -133,12 +137,6 @@ img {
   height: auto;
 }
 
-table {
-  border-collapse: collapse;
-}
-table thead th {
-  border-bottom: 2px solid grey;
-}
 .Line td {
   border-bottom: 1px solid grey;
 }
@@ -153,47 +151,71 @@ table thead th {
   margin-left: 15%;
 }
 
-.figcap {
+.caption,
+.modelcaption,
+.videocaption {
   text-align: center;
-  width: 100%;
   color: grey;
   margin-top: 3pt;
   margin-bottom: 20pt;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .leftcontainer {
   margin-top: 15px;
   margin-right: 10px;
-  width: 100%;
-  width: 500px;
+  width: 60%;
   display: flex;
   text-align: center;
   float: left;
+}
+
+.leftcontainer img {
+  width: 100%;
+}
+
+.leftcontainer video {
+  width: 100%;
+}
+
+.leftcontainer::after {
+  clear: both;
 }
 
 .clear {
   clear: both;
 }
 
-/* AYO CHECKKKK */
-figcaption {
+.modelcaption {
+  counter-increment: models;
+}
+
+.modelcaption::before {
+  content: "Model " counter(models) ") ";
+}
+
+.caption {
   counter-increment: figures; /* count the number of fig captions */
 }
 
-figcaption::before {
+.caption::before {
   content: "Figure " counter(figures) ") "; /* display the figure number in the caption */
 }
 
-/*
-.model {
-  counter-increment: model; /* count the number of fig captions }
-
-.model::before {
-  content: "Model " counter(model) ") "; /* display the figure number in the caption
+.videocaption {
+  counter-increment: videos;
 }
-*/
+
+.videocaption::before {
+  content: "Video " counter(videos) ") ";
+}
+
+.tablecap {
+  counter-increment: videos;
+}
+
+.tablecap::before {
+  content: "Table " counter(videos) ") ";
+}
 
 :target {
   background-color: #f4d03f;
@@ -210,6 +232,7 @@ nav {
   flex-direction: column;
   align-items: center;
   margin-bottom: 35px;
+  margin-left: -1px;
   justify-content: center;
   font-size: 15px;
   line-height: 2;
@@ -223,4 +246,90 @@ nav {
 
 #navbar {
   transition: 0.5s;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table thead th {
+  border-bottom: 2px solid grey;
+}
+
+/*
+.row {
+  display: flex;
+  float: left;
+}
+
+.column {
+  width: 50%;
+  padding: 10px;
+}
+*/
+
+.column video {
+  width: 100%;
+}
+
+.column img {
+  width: 100%;
+}
+
+.column model-viewer {
+  width: 100%;
+  height: 500px;
+}
+
+.reset {
+  counter-reset: models;
+}
+
+.tablecap {
+  text-align: center;
+  color: black;
+  margin-top: 3pt;
+  caption-side: top;
+  margin-bottom: 5px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.test table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.test tr:nth-child(even) {
+  background-color: #dbdada;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
+@media screen and (max-width: 950px) {
+  .column {
+    width: 100%;
+  }
 }
